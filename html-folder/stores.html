@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>門市專區 | 翠峰飲品開發公司</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">翠峰飲品</a>
+      <button class="hamburger" id="hamburger-btn">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">品牌介紹</a></li>
+        <li><a href="products.html">產品專區</a></li>
+        <li><a href="cart.html">購物車</a></li>
+        <li><a href="stores.html">門市專區</a></li>
+        <li><a href="kiosk.html">自助點餐</a></li>
+        <li><a href="member.html">會員專區</a></li>
+        <li><a href="news.html">最新消息</a></li>
+        <li><a href="contact.html">聯絡我們</a></li>
+        <li><a href="policy.html">條款政策</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 地圖區 -->
+  <section id="store-map" style="text-align: center; margin: 2rem 0;">
+    <h2>門市據點</h2>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28923.947!2d121.5654!3d25.0330!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abbcd00f0001%3A0xabcdef!2z6Ie65YyX5bqr5rC05ZCI5Lit5q2j!5e0!3m2!1szh-TW!2stw!4v0000000000000" 
+      width="90%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+  </section>
+
+  <!-- 門市資訊 -->
+  <section id="store-info" class="product-grid" style="padding: 0 2rem;">
+    <div class="product-card">
+      <h3>台北信義旗艦店</h3>
+      <p>地址：台北市信義區松壽路 88 號<br>電話：(02) 1234-5678<br>營業時間：10:00 - 22:00</p>
+    </div>
+    <div class="product-card">
+      <h3>台中公益店</h3>
+      <p>地址：台中市西區公益路 168 號<br>電話：(04) 9876-5432<br>營業時間：11:00 - 21:00</p>
+    </div>
+    <!-- 可新增其他門市 -->
+  </section>
+
+  <!-- 限定商品 -->
+  <section id="store-limited">
+    <h2 style="text-align: center;">門市限定商品</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/store_drink1.jpg" alt="限定飲品1">
+        <h3>酪梨牛奶</h3>
+        <p>限信義門市提供</p>
+        <p class="price">NT$ 95</p>
+      </div>
+      <div class="product-card">
+        <img src="images/store_drink2.jpg" alt="限定飲品2">
+        <h3>熱桂圓紅棗茶</h3>
+        <p>限台中門市提供</p>
+        <p class="price">NT$ 75</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 自助點餐入口 -->
+  <section id="self-order" style="text-align: center; margin: 3rem 0;">
+    <h2>自助點餐系統（門市限定）</h2>
+    <p>現場體驗快速客製推薦服務</p>
+    <a href="kiosk.html" class="btn">前往點餐</a>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer>
+    <div class="footer-links">
+      <a href="terms.html">使用條款</a> |
+      <a href="privacy.html">隱私政策</a>
+    </div>
+    <div class="footer-contact">
+      聯絡我們：info@verdantpeak.com | 電話：(02)1234-5678
+    </div>
+    <div class="footer-social">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">Line</a>
+    </div>
+    <p class="copyright">© 2025 翠峰飲品開發公司</p>
+  </footer>
+
+</body>
+</html>
