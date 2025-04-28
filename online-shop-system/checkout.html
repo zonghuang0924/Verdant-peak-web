@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>結帳 | 翠峰飲品開發公司</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 導覽列（略同上） -->
+  <nav class="navbar">
+    <!-- 同前頁 -->
+  </nav>
+
+  <!-- 結帳表單 -->
+  <section id="checkout" style="padding: 2rem;">
+    <h2 style="text-align:center;">填寫訂單資料</h2>
+    <form id="checkoutForm" class="section-content">
+      <h3>收件人資訊</h3>
+      <input type="text" placeholder="姓名" required />
+      <input type="tel" placeholder="電話" required />
+      <input type="text" placeholder="地址" required />
+
+      <h3>付款方式</h3>
+      <select required>
+        <option value="">請選擇</option>
+        <option value="card">信用卡</option>
+        <option value="atm">ATM 轉帳</option>
+        <option value="cod">貨到付款</option>
+      </select>
+
+      <h3>運送方式</h3>
+      <select required>
+        <option value="">請選擇</option>
+        <option value="home">宅配到府</option>
+        <option value="store">超商取貨</option>
+      </select>
+
+      <button type="submit" class="btn">送出訂單</button>
+    </form>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer>
+    <!-- 同上 -->
+  </footer>
+
+</body>
+</html>
