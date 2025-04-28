@@ -8,7 +8,7 @@
       "type": "chrome",
       "request": "launch",
       "name": "對 localhost 啟動 Chrome",
-      "url": "http://localhost:8080",
+      "url": "yeh0315.ddns.net",
       "webRoot": "${workspaceFolder}"
     }
   ]

@@ -1,62 +1,36 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>結帳 | 翠峰飲品開發公司</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="../universal-file/nav.css"><!--匯入導覽列美化-->
-  <script src="../universal-file/allpage.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>結帳</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>結帳</h1>
+    <form id="checkout-form">
+        <label for="name">姓名：</label>
+        <input type="text" id="name" name="name" required><br>
 
-  <!-- 導覽列 -->
-  <div id="navbar"></div>
+        <label for="address">地址：</label>
+        <input type="text" id="address" name="address" required><br>
 
-  <!-- 結帳內容 -->
-  <section id="checkout" style="padding: 2rem;">
-    <h2 style="text-align:center;">結帳資料填寫</h2>
-    <form id="checkoutForm" class="section-content">
-      <h3>收件人資訊</h3>
-      <input type="text" placeholder="姓名" required /><br><br>
-      <input type="tel" placeholder="聯絡電話" required /><br><br>
-      <input type="text" placeholder="配送地址" required /><br><br>
+        <label for="payment">付款方式：</label>
+        <select id="payment" name="payment" required>
+            <option value="credit-card">信用卡</option>
+            <option value="paypal">PayPal</option>
+            <option value="cash-on-delivery">貨到付款</option>
+        </select><br>
 
-      <h3>付款方式</h3>
-      <select required>
-        <option value="">請選擇付款方式</option>
-        <option value="credit">信用卡付款</option>
-        <option value="atm">ATM 轉帳</option>
-        <option value="cod">貨到付款</option>
-      </select><br><br>
+        <label for="shipping">運送方式：</label>
+        <select id="shipping" name="shipping" required>
+            <option value="standard">標準運送</option>
+            <option value="express">快遞運送</option>
+        </select><br>
 
-      <h3>運送方式</h3>
-      <select required>
-        <option value="">請選擇運送方式</option>
-        <option value="home">宅配到府</option>
-        <option value="store">超商取貨</option>
-      </select><br><br>
-
-      <button type="submit" class="btn">確認送出訂單</button>
+        <button type="submit">確認訂單</button>
     </form>
-  </section>
 
-  <!-- 頁尾 -->
-  <footer>
-    <div class="footer-links">
-      <a href="terms.html">使用條款</a> |
-      <a href="privacy.html">隱私政策</a>
-    </div>
-    <div class="footer-contact">
-      聯絡我們：info@verdantpeak.com | 電話：(02)1234-5678
-    </div>
-    <div class="footer-social">
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">Line</a>
-    </div>
-    <p class="copyright">© 2025 翠峰飲品開發公司</p>
-  </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>

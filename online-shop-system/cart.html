@@ -1,65 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>購物車 | 翠峰飲品開發公司</title>
-  <link rel="stylesheet" href="../universal-file/nav.css"><!--匯入導覽列美化-->
-  <script src="../universal-file/allpage.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物車</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- 導覽列 -->
-  <div id="navbar"></div>
-
-  <!-- 購物車內容 -->
-  <section id="cart">
-    <h2 style="text-align:center;">您的購物車</h2>
-    <table class="cart-table">
-      <thead>
-        <tr>
-          <th>商品</th>
-          <th>價格</th>
-          <th>數量</th>
-          <th>小計</th>
-          <th>操作</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- 示例一筆 -->
-        <tr>
-          <td>原味植萃飲</td>
-          <td>NT$65</td>
-          <td><input type="number" value="2" min="1" /></td>
-          <td>NT$130</td>
-          <td><button class="btn">移除</button></td>
-        </tr>
-        <!-- 更多商品由 JS 動態產生 -->
-      </tbody>
+    <h1>購物車</h1>
+    <table id="cart-table">
+        <thead>
+            <tr>
+                <th>商品名稱</th>
+                <th>單價</th>
+                <th>數量</th>
+                <th>小計</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+            <!-- 商品清單會動態顯示在這裡 -->
+        </tbody>
     </table>
+    <p>總計: <span id="total-price">0</span> 元</p>
+    <button onclick="window.location.href='checkout.html'">前往結帳</button>
 
-    <div class="cart-summary" style="text-align: center; margin: 2rem;">
-      <p>總計：NT$130</p>
-      <a href="checkout.html" class="btn">前往結帳</a>
-    </div>
-  </section>
-
-  <!-- 頁尾 -->
-  <footer>
-    <div class="footer-links">
-      <a href="terms.html">使用條款</a> |
-      <a href="privacy.html">隱私政策</a>
-    </div>
-    <div class="footer-contact">
-      聯絡我們：info@verdantpeak.com | 電話：(02)1234-5678
-    </div>
-    <div class="footer-social">
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">Line</a>
-    </div>
-    <p class="copyright">© 2025 翠峰飲品開發公司</p>
-  </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
