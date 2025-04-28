@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>自助點餐系統 | 翠峰飲品開發公司</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">翠峰飲品</a>
+      <button class="hamburger" id="hamburger-btn">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">品牌介紹</a></li>
+        <li><a href="products.html">產品專區</a></li>
+        <li><a href="cart.html">購物車</a></li>
+        <li><a href="stores.html">門市專區</a></li>
+        <li><a href="kiosk.html">自助點餐</a></li>
+        <li><a href="member.html">會員專區</a></li>
+        <li><a href="news.html">最新消息</a></li>
+        <li><a href="contact.html">聯絡我們</a></li>
+        <li><a href="policy.html">條款政策</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 健康資料填寫 -->
+  <section id="health-info" style="padding: 2rem;">
+    <h2 style="text-align:center;">健康資料填寫</h2>
+    <form id="healthForm" class="section-content">
+      <label>性別：</label><br>
+      <select required>
+        <option value="">請選擇</option>
+        <option value="male">男性</option>
+        <option value="female">女性</option>
+        <option value="other">其他</option>
+      </select><br><br>
+
+      <label>年齡：</label><br>
+      <input type="number" min="1" placeholder="請輸入年齡" required /><br><br>
+
+      <label>飲食偏好：</label><br>
+      <input type="checkbox" name="preference" value="低糖" /> 低糖
+      <input type="checkbox" name="preference" value="無咖啡因" /> 無咖啡因
+      <input type="checkbox" name="preference" value="無乳製品" /> 無乳製品<br><br>
+
+      <button type="submit" class="btn">產生飲品建議</button>
+    </form>
+  </section>
+
+  <!-- 客製推薦與成分顯示 -->
+  <section id="recommendation" style="text-align:center; margin: 3rem 0;">
+    <h2>推薦飲品</h2>
+    <div id="recommendedDrink" class="product-card">
+      <!-- JS 動態產生內容 -->
+      <h3>玫瑰花萃飲</h3>
+      <p>成分：玫瑰花瓣、蜂蜜、純水</p>
+      <p>價格：NT$75</p>
+      <label>請輸入數量：</label>
+      <input type="number" min="1" value="1" /><br><br>
+      <button class="btn">確認送出訂單</button>
+    </div>
+  </section>
+
+  <!-- 號碼單顯示（模擬） -->
+  <section id="receipt" style="text-align:center; margin: 3rem 0;">
+    <h2>您的號碼單</h2>
+    <p>號碼：<strong>A012</strong></p>
+    <p>請於取餐區等待叫號</p>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer>
+    <div class="footer-links">
+      <a href="terms.html">使用條款</a> |
+      <a href="privacy.html">隱私政策</a>
+    </div>
+    <div class="footer-contact">
+      聯絡我們：info@verdantpeak.com | 電話：(02)1234-5678
+    </div>
+    <div class="footer-social">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">Line</a>
+    </div>
+    <p class="copyright">© 2025 翠峰飲品開發公司</p>
+  </footer>
+
+</body>
+</html>
