@@ -1,0 +1,19 @@
+nav ul {
+  list-style: none; /* 移除前面的點點 */
+  padding: 0;
+  margin: 0;
+  display: flex; /* 讓子元素橫向排列 */
+}
+
+nav ul li {
+  margin-right: 20px; /* 每個項目之間加一點間距 */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+nav ul li a:hover {
+  color: #4CAF50; /* 滑鼠移上去變綠色 */
+}
