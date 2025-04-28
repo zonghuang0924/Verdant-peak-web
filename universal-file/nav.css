@@ -5,6 +5,9 @@ nav {
   padding: 10px 20px; /* 上下左右內距 */
   overflow-x: auto; /* 防止畫面太窄時爆版，加滾動條 */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* 加一點陰影，提升質感 */
+  transition: top 0.3s; /* 讓隱藏時有滑動動畫 */
+  text-align: center;
+  width: 100%;
 }
 
 /* nav 裡的 ul 設定 */
@@ -20,7 +23,7 @@ nav ul {
 
 /* nav 裡的每個 li 設定 */
 nav ul li {
-  margin: 0 6px; /* 左右間隔 */
+  margin: 0 30px; /* 左右間隔 */
 }
 
 /* nav 裡的每個 a（連結）設定 */
