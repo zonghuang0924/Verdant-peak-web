@@ -1,19 +1,40 @@
+/* 整個 nav 區域設定 */
+nav {
+  background-color: rgba(255, 255, 255, 0.8); /* 白色半透明底 */
+  padding: 10px 20px; /* 上下左右內距 */
+  overflow-x: auto; /* 防止畫面太窄時爆版，加滾動條 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* 加一點陰影，提升質感 */
+}
+
+/* nav 裡的 ul 設定 */
 nav ul {
-  list-style: none; /* 移除前面的點點 */
-  padding: 0;
+  display: flex; /* 橫向排列 */
+  justify-content: center; /* 水平置中 */
+  align-items: center; /* 垂直置中 */
+  flex-wrap: nowrap; /* 不允許自動換行 */
+  list-style: none; /* 去掉前面的點點 */
   margin: 0;
-  display: flex; /* 讓子元素橫向排列 */
+  padding: 0;
 }
 
+/* nav 裡的每個 li 設定 */
 nav ul li {
-  margin-right: 20px; /* 每個項目之間加一點間距 */
+  margin: 0 6px; /* 左右間隔 */
 }
 
+/* nav 裡的每個 a（連結）設定 */
 nav ul li a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
+  text-decoration: none; /* 去除底線 */
+  color: black; /* 黑色文字 */
+  font-size: 18px; /* 字體大小 */
+  font-weight: bold; /* 粗體字 */
+  padding: 10px 15px; /* 增加點擊範圍 */
+  transition: background-color 0.3s, color 0.3s; /* 漸變動畫 */
 }
+
+/* 滑鼠移上去的效果 */
 nav ul li a:hover {
-  color: #4CAF50; /* 滑鼠移上去變綠色 */
+  background-color: rgba(0, 0, 0, 0.05); /* 背景淡淡變暗 */
+  color: #4CAF50; /* 字變成清新的綠色 */
+  border-radius: 8px; /* 小小的圓角 */
 }
