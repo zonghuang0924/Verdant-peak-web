@@ -1,6 +1,6 @@
 /* 整個 nav 區域設定 */
 nav {
-  background-color: rgba(255, 255, 255, 0.8); /* 白色半透明底 */
+  background-color: rgba(255, 255, 255, 0.3); /* 白色半透明底 */
   padding: 10px 20px; /* 上下左右內距 */
   overflow-x: auto; /* 防止畫面太窄時爆版，加滾動條 */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* 加一點陰影，提升質感 */
