@@ -35,7 +35,7 @@ body {
 }
 
 /* logo樣式 */
-.logo {
+.logo-text {
   font-size: 24px;
   font-weight: bold;
   color: black;
@@ -46,6 +46,22 @@ body {
   background-clip: text; /* Firefox 支援 */
   color: transparent;
   flex-shrink: 0;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;  /* 移除底線 */
+}
+
+.logo-wrapper:hover {
+  opacity: 0.8; /* 淡淡的 hover 效果 */
+}
+
+.logo-side-img {
+  height: 40px;
+  border-radius: 4px;
 }
 
 /* 漢堡按鈕 */
@@ -137,18 +153,27 @@ body {
   position: absolute; /* 🔑 相對於 .dropdown li 定位 */
   top: 100%; /* 緊貼按鈕下方 */
   left: 0;
-  background-color: #444;
-  min-width: 160px;
+  width: 100%;
+  max-width: 80px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: rgba(255, 255, 255, 0.0);
+  min-width: 90px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
   z-index: 2000;
 }
 
 .dropdown-content li a {
   display: block;
   padding: 0.5rem 1rem;
-  color: white;
+  background: linear-gradient(90deg, #01814A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* Firefox 支援 */
+  color: transparent;
   text-decoration: none;
   white-space: nowrap;
 }
