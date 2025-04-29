@@ -1,34 +1,16 @@
-let prevScrollPos = window.scrollY;
+let prevScrollPos = window.pageYOffset;
 const navbar = document.getElementById("navbar");
 
 window.addEventListener('scroll', function() {
-  const currentScrollPos = window.scrollY;
-  const threshold = 100;
-  const windowHeight = window.innerHeight;
-  const documentHeight = document.body.offsetHeight;
-  const scrollBottom = currentScrollPos + windowHeight;
+  const currentScrollPos = window.pageYOffset;
 
-  if (scrollBottom >= documentHeight - 50) {
+  if (prevScrollPos > currentScrollPos) {
+    // 使用者往上滾 → 顯示 navbar
     navbar.style.top = "0";
-    navbar.classList.add("transparent");
-  } else if (currentScrollPos > threshold) {
-    if (prevScrollPos > currentScrollPos) {
-      navbar.style.top = "0";
-      navbar.classList.remove("transparent");
-    } else {
-      navbar.style.top = "-80px";
-    }
   } else {
-    navbar.style.top = "0";
-    navbar.classList.remove("transparent");
+    // 使用者往下滾 → 隱藏 navbar
+    navbar.style.top = "-80px";
   }
 
   prevScrollPos = currentScrollPos;
-});
-
-const hamburgerBtn = document.getElementById('hamburger-btn');
-const navLinks = document.getElementById('nav-links');
-
-hamburgerBtn.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
 });

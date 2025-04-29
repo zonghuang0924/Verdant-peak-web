@@ -14,12 +14,14 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   width: 100%;
   height: 80px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
-  transition: top 0.3s;
+  transition: top 0.3s ease, background-color 0.3s ease; /* 加了 background-color 的過渡動畫 */
 }
+
 
 /* nav內部的容器 */
 .nav-container {
@@ -82,7 +84,7 @@ body {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
 
-/* 手機版 */
+/* 手機版樣式 */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
