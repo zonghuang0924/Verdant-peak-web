@@ -6,8 +6,6 @@
   <title>產品專區 | 翠峰飲品開發公司</title>
   <link rel="stylesheet" href="../../universal-file/nav.css"><!--匯入導覽列美化-->
   <script src="../../universal-file/allpage.js" defer></script>
-  <script src="products.js"></script>
-  <script src="../../universal-file/navsetting.js" defer></script>
 </head>
 <body>
 
@@ -58,48 +56,10 @@
 
   <!-- 商品展示 -->
   <h1>商品展示</h1>
-  <div id="product-list">
-      <!-- 商品項目會由 JavaScript 動態插入 -->
-  </div>
-  <section id="product-list" class="product-grid">
-
-    <!-- 商品卡片 -->
-    <div class="product-card" data-category="classic">
-      <img src="images/original1.jpg" alt="原味飲品" />
-      <h3>原味植萃飲</h3>
-      <p>成分：天然草本精華、純水<br>保存：冷藏｜規格：350ml</p>
-      <p class="price">NT$65</p>
-      <button class="btn">加入購物車</button>
-    </div>
-
-    <div class="product-card" data-category="rose">
-      <img src="images/rose1.jpg" alt="玫瑰花茶" />
-      <h3>玫瑰花茶</h3>
-      <p>成分：玫瑰、蜂蜜、純水<br>保存：冷藏｜規格：350ml</p>
-      <p class="price">NT$75</p>
-      <button class="btn">加入購物車</button>
-    </div>
-
-    <div class="product-card" data-category="blue">
-      <img src="images/blue1.jpg" alt="藍玫瑰飲" />
-      <h3>藍玫瑰沁涼飲</h3>
-      <p>成分：藍玫瑰萃取、檸檬<br>保存：冷藏｜規格：350ml</p>
-      <p class="price">NT$85</p>
-      <button class="btn">加入購物車</button>
-    </div>
-
-    <div class="product-card" data-category="limited">
-      <img src="images/limited1.jpg" alt="限定水果飲" />
-      <h3>夏日限定水果飲</h3>
-      <p>成分：綜合水果、薄荷氣泡水<br>保存：冷藏｜規格：500ml</p>
-      <p class="price">NT$95</p>
-      <button class="btn">加入購物車</button>
-    </div>
-
-  </section>
+  <div id="product-list"></div>
 
   <!-- 頁尾 -->
   <div id="footer"></div>
-
+  <script src="products.js"></script>
 </body>
 </html>

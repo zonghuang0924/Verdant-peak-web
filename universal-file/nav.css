@@ -95,6 +95,38 @@ body {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
 
+.cart-btn {
+  margin-left: 20px;
+  position: relative;
+}
+
+.cart-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.cart-icon:hover {
+  transform: scale(1.1);
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 14px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
 /* 手機版樣式 */
 @media (max-width: 768px) {
   .hamburger {

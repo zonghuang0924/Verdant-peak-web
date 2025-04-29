@@ -14,3 +14,11 @@ window.addEventListener('scroll', function() {
 
   prevScrollPos = currentScrollPos;
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+  const cartCountSpan = document.getElementById('cart-count');
+  const cartCount = localStorage.getItem('cartCount') || 0;
+  if (cartCountSpan) {
+    cartCountSpan.textContent = cartCount;
+  }
+});
