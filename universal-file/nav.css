@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding-top: 80px; /* 預留給navbar空間，避免被遮住 */
+  font-family: Arial, sans-serif;
+}
 /* 整個 nav 區域設定 */
 nav {
   background-color: rgba(255, 255, 255, 0.3); /* 白色半透明底 */
@@ -8,6 +13,23 @@ nav {
   transition: top 0.3s; /* 讓隱藏時有滑動動畫 */
   text-align: center;
   width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  transition: top 0.3s; /* 重要！有動畫效果 */
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 /* nav 裡的 ul 設定 */
