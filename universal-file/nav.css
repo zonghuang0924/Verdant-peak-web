@@ -19,18 +19,19 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 999;
-  transition: top 0.3s ease, background-color 0.3s ease; /* 加了 background-color 的過渡動畫 */
+  transition: top 0.6s ease, background-color 0.3s ease; /* 加了 background-color 的過渡動畫 */
+  transform: translateY(0);
 }
-
 
 /* nav內部的容器 */
 .nav-container {
   width: 100%;
   max-width: 1200px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 0 20px;
+  position: relative;
 }
 
 /* logo樣式 */
@@ -39,6 +40,12 @@ body {
   font-weight: bold;
   color: black;
   text-decoration: none;
+  background: linear-gradient(90deg, #4CAF50, #00BCD4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* Firefox 支援 */
+  color: transparent;
+  flex-shrink: 0;
 }
 
 /* 漢堡按鈕 */
@@ -53,9 +60,13 @@ body {
 /* nav連結 */
 .nav-links {
   display: flex;
-  list-style: none;
-  margin: 0;
+  flex-wrap: wrap;              /* 小螢幕時自動換行 */
+  justify-content: center;      /* 水平置中對齊 */
+  align-items: center;          /* 垂直置中對齊 */
+  gap: 1rem;                    /* 自動間距 */
   padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .nav-links li {

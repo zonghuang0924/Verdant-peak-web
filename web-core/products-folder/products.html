@@ -13,6 +13,36 @@
 
   <!-- 導覽列（Navbar） -->
   <div id="navbar"></div>
+  <script>
+    fetch('../../universal-file/nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .then(() => {
+        // 等 navbar 載入後再啟動你的navbar滾動效果
+        let prevScrollPos = window.pageYOffset;
+        const navbar = document.getElementById("navbar");
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        window.addEventListener('scroll', function() {
+          const currentScrollPos = window.pageYOffset;
+          if (prevScrollPos > currentScrollPos) {
+            navbar.style.top = "0";
+            navbar.classList.remove("transparent");
+          } else {
+            navbar.style.top = "-80px";
+            navbar.classList.add("transparent");
+          }
+          prevScrollPos = currentScrollPos;
+        });
+
+        hamburgerBtn.addEventListener('click', function() {
+          navLinks.classList.toggle('active');
+        });
+      });
+  </script>
 
   <!-- 搜尋與篩選 -->
   <section id="search-filter" style="text-align: center; margin: 2rem 0;">
