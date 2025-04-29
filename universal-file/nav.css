@@ -18,7 +18,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+  z-index: 900;
   transition: top 0.6s ease, background-color 0.3s ease; /* 加了 background-color 的過渡動畫 */
   transform: translateY(0);
 }
@@ -26,7 +26,7 @@ body {
 /* nav內部的容器 */
 .nav-container {
   width: 100%;
-  max-width: 1600px;
+  max-width: 2000px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -71,6 +71,7 @@ body {
 
 .nav-links li {
   margin: 0 15px;
+  position: relative;
 }
 
 .nav-links li a {
@@ -125,6 +126,28 @@ body {
   justify-content: center;
   align-items: center;
   font-weight: bold;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute; /* 🔑 相對於 .dropdown li 定位 */
+  top: 100%; /* 緊貼按鈕下方 */
+  left: 0;
+  background-color: #444;
+  min-width: 160px;
+  z-index: 2000;
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* 手機版樣式 */
