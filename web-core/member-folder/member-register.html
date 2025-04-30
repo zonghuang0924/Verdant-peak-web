@@ -83,17 +83,17 @@
     </div>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
     <div class="nav-links">
-      <a href="index.html">首頁</a>
-      <a href="products.html">產品專區</a>
-      <a href="stores.html">門市資訊</a>
-      <a href="member.html">會員中心</a>
+      <a href="../index-folder/index.html">首頁</a>
+      <a href="../products-folder/products.html">產品專區</a>
+      <a href="../stores-folder/stores.html">門市資訊</a>
+      <a href="../member-folder/member.html">會員中心</a>
     </div>
   </nav>
 </header>
 
 <main>
-  <h1>註冊會員</h1>
-  <form onsubmit="return validateRegisterForm()" action="member.html" method="post">
+  <h1>會員註冊</h1>
+  <form onsubmit="return validateRegisterForm()" action="../member-folder/member.html" method="post">
     <label for="name">姓名：</label><br />
     <input type="text" id="name" name="name" required /><br />
 
@@ -103,15 +103,26 @@
     <label for="password">密碼（至少6字）：</label><br />
     <input type="password" id="password" name="password" required /><br />
 
+    <label for="phone">電話號碼：</label><br />
+    <input type="phone" id="phone" name="phone" required /><br />
+
+    <label for="birthday">生日西元年月日：</label><br />
+    <input type="birthday" id="birthday" name="birthday" required /><br />
+
     <label>
       <input type="checkbox" id="agree" required />
-      我同意 <a href="terms.html">會員條款</a> 與 <a href="privacy.html">隱私政策</a>
+      我同意 <a href="../policy-folder/policy.html">會員條款</a> 與 <a href="../policy-folder/policy.html">隱私政策</a>
     </label><br><br>
+
+    <label>
+        <input type="checkbox" id="agree" required />
+        我同意訂閱及優惠券使用通知
+      </label><br><br>
 
     <button type="submit">註冊</button>
   </form>
 
-  <p>已經有帳號？<a href="login.html">前往登入</a></p>
+  <p>已經有帳號？<a href="../member-folder/member-login.html">前往登入</a></p>
 </main>
 
 <footer>
@@ -119,7 +130,7 @@
     <a href="#">Facebook</a> |
     <a href="#">Instagram</a>
   </p>
-  <p><a href="terms.html">服務條款</a> | <a href="privacy.html">隱私政策</a></p>
+  <p><a href="../policy-folder/policy.html">服務條款</a> | <a href="../policy-folder/policy.html">隱私政策</a></p>
   <p>&copy; 2025 翠峰飲品開發公司 Verdant Peak</p>
 </footer>
 
