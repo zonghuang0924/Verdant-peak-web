@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>會員登入 | 翠峰 Verdant Peak</title>
+  <meta name="description" content="登入翠峰 Verdant Peak 會員中心，管理訂單、積分與個人資訊。" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <meta property="og:title" content="翠峰 Verdant Peak - 會員登入" />
+  <meta property="og:description" content="登入會員享受專屬優惠與服務。" />
+  <meta property="og:image" content="logo-preview.png" />
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    header, footer { background: #e0f0ea; padding: 10px 20px; }
+    nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    .nav-links { display: flex; gap: 15px; }
+    .nav-links a { text-decoration: none; color: #00664d; font-weight: bold; }
+    .hamburger { display: none; font-size: 24px; cursor: pointer; }
+    .logo img { height: 40px; }
+
+    main { padding: 30px 20px; max-width: 600px; margin: auto; }
+    input[type="email"], input[type="password"] {
+      width: 100%; padding: 10px; margin-bottom: 15px;
+      border: 1px solid #ccc; border-radius: 4px;
+    }
+
+    button { background-color: #008060; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+    footer p { margin: 5px 0; font-size: 14px; text-align: center; }
+
+    @media screen and (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; width: 100%; }
+      .nav-links.active { display: flex; }
+      .hamburger { display: block; }
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-links');
+      nav.classList.toggle('active');
+    }
+
+    function validateForm() {
+      const email = document.getElementById('email');
+      const password = document.getElementById('password');
+      if (!email.value.includes('@')) {
+        alert('請輸入有效的 Email。');
+        return false;
+      }
+      if (password.value.length < 6) {
+        alert('密碼至少需 6 字元。');
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">
+      <a href="index.html"><img src="logo.png" alt="翠峰 Verdant Peak" /></a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="nav-links">
+      <a href="index.html">首頁</a>
+      <a href="products.html">產品專區</a>
+      <a href="stores.html">門市資訊</a>
+      <a href="member.html">會員中心</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <h1>會員登入</h1>
+  <form onsubmit="return validateForm()" action="member.html" method="post">
+    <label for="email">Email：</label><br />
+    <input type="email" id="email" name="email" required /><br />
+
+    <label for="password">密碼：</label><br />
+    <input type="password" id="password" name="password" required /><br />
+
+    <button type="submit">登入</button>
+  </form>
+
+  <p><a href="#">忘記密碼？</a></p>
+  <p>還沒有帳號？<a href="register.html">立即註冊</a></p>
+</main>
+
+<footer>
+  <p>追蹤我們：
+    <a href="#">Facebook</a> |
+    <a href="#">Instagram</a>
+  </p>
+  <p><a href="terms.html">服務條款</a> | <a href="privacy.html">隱私政策</a></p>
+  <p>&copy; 2025 翠峰飲品開發公司 Verdant Peak</p>
+</footer>
+
+</body>
+</html>
