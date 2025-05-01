@@ -21,35 +21,3 @@ products.forEach(product => {
 
   productList.appendChild(productCard);
 });
-
-// 讀取購物車資料
-let cart = JSON.parse(localStorage.getItem("cart")) || {};
-
-// 處理加入購物車按鈕點擊事件
-document.addEventListener("click", function(e) {
-  if (e.target && e.target.classList.contains("add-to-cart")) {
-    const productId = e.target.getAttribute("data-id");
-
-    if (cart[productId]) {
-      cart[productId].quantity += 1;
-    } else {
-      const product = products.find(p => p.id === productId);
-      cart[productId] = { ...product, quantity: 1 };
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartDisplay();
-  }
-});
-
-// 更新購物車顯示
-function updateCartDisplay() {
-  const cartCount = Object.values(cart).reduce((total, product) => total + product.quantity, 0);
-  const cartIcon = document.getElementById("cart-icon");
-
-  if (cartIcon) {
-    cartIcon.textContent = cartCount;
-  }
-}
-
-updateCartDisplay();
