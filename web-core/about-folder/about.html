@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>首頁 | 翠峰飲品開發公司</title>
-  <link rel="stylesheet" href="../../universal-file/nav.css"><!--匯入導覽列美化-->
-  <link rel="stylesheet" href="../../universal-file/footer.css"><!--匯入尾頁美化-->
-  <link href="about.css" rel="stylesheet" type="text/css" /><!--匯入此網頁專屬美化-->
-  <script src="../../universal-file/allpage.js" defer></script>
-  <script src="../../universal-file/productData.js"></script><!--匯入產品資料的js-->
-  <script src="products.js" defer></script><!--匯入產品展示主js檔案-->
-  <script src="../../online-shop-system/cart.js"></script><!--匯入購物車系統-->
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>關於我們 | 翠峰飲品開發公司</title>
+    <link rel="stylesheet" href="../../universal-file/nav.css"><!--匯入導覽列美化-->
+    <link rel="stylesheet" href="../../universal-file/footer.css"><!--匯入尾頁美化-->
+    <script src="../../universal-file/allpage.js" defer></script>
+    <script src="../../universal-file/productData.js"></script><!--匯入產品資料的js-->
+    <script src="products.js" defer></script><!--匯入產品展示主js檔案-->
+    <script src="../../online-shop-system/cart.js"></script><!--匯入購物車系統-->
+  </head>
 <body>
-  
 
-  <!-- 導覽列（Navbar） -->
+  <!-- 導覽列 -->
   <div id="navbar-placeholder"></div>
   <script>
     fetch('nav.html')
@@ -57,60 +55,52 @@
       });
   </script>
 
-  <!-- 品牌主視覺輪播 -->
-  <section id="hero-carousel">
-    <div class="carousel-slide">
-      <img src="images/hero1.jpg" alt="主視覺 1" />
-      <div class="carousel-caption">自然 × 健康 × 科技</div>
-    </div>
-    <!-- 可再加其他圖片 -->
-  </section>
+    <!-- 頁面標題 -->
+    <header>
+        <h1 style="text-align:center; padding: 2rem 0; color: #006d5b;">關於翠峰</h1>
+    </header>
 
-  <!-- 精選產品預覽 -->
-  <section id="featured-products">
-    <h2>精選商品</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="images/product1.jpg" alt="商品1" />
-        <h3>翠峰甘露大道至簡</h3>
-        <a href="../products-folder/products.html" class="btn">立即選購</a>
-      </div>
-      <div class="product-card">
-        <img src="images/product2.jpg" alt="商品2" />
-        <h3>翠峰甘露玫瑰風味</h3>
-        <a href="../products-folder/products.html" class="btn">立即選購</a>
-      </div>
-    </div>
-  </section>
+    <!-- 品牌起源與理念 -->
+    <section id="origin">
+        <h2>品牌起源與理念</h2>
+        <div class="section-content">
+            <p>
+                翠峰飲品開發公司源自對自然與健康的熱愛，致力於開發融合「綠意」、「純粹」與「科技」的健康飲品。品牌核心理念是：「每一口，皆為自然的延續」。
+            </p>
+        </div>
+    </section>
 
-  <!-- 最新公告與活動 -->
-  <section id="news-events">
-    <h2>最新消息</h2>
-    <ul class="news-list">
-      <li><strong>[公告]</strong> 門市營業時間調整 <span class="date">2025/04/30</span></li>
-      <li><strong>[活動]</strong> 會員日雙倍點數 <span class="date">2025/05/10</span></li>
-    </ul>
-  </section>
-  
+    <!-- 綠色製程與可持續發展承諾 -->
+    <section id="sustainability">
+        <h2>綠色製程與可持續發展</h2>
+        <div class="section-content">
+            <p>
+                我們採用全程無毒認證製程、碳中和包裝、在地農產合作，以及回收再利用系統。從源頭減廢，為地球環境永續盡一份心力。
+            </p>
+        </div>
+    </section>
 
-  <!-- 門市推薦與導覽入口 -->
-  <section id="store-locator">
-    <h2>門市推薦</h2>
-    <div class="store-preview">
-      <img src="images/store.jpg" alt="門市圖" />
-      <div>
-        <h3>新北淡水實體旗艦店</h3>
-        <p>備有客製健康飲品與專人服務。</p>
-        <a href="../stores-folder/stores.html" class="btn">查看門市</a>
-      </div>
-    </div>
-  </section>
+    <!-- 公司沿革與創辦人介紹 -->
+    <section id="history-founder">
+        <h2>公司沿革與創辦人</h2>
+        <div class="section-content">
+            <p>
+                創立於 2025 年，翠峰飲品從台灣出發。創辦人陳韋誌先生。結合天然研發與美學設計，打造出獨樹一幟的品牌定位。
+            </p>
+        </div>
+    </section>
 
-  <div style="height: 2000px;"></div>
+    <!-- 品牌大事記與媒體報導 -->
+    <section id="milestones">
+        <h2>品牌大事記與媒體報導</h2>
+        <div class="section-content">
+            <ul class="timeline">
+                <li><strong>2025</strong> — 正式建立翠峰飲品開發公司。</li>
+            </ul>
+        </div>
+    </section>
 
-  
-
-  <!-- 頁尾 -->
+    <!-- 頁尾 -->
   <div id="footer"></div>
 
 </body>
