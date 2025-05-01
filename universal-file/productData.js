@@ -1,5 +1,6 @@
 // productData.js
-const products = [
+// 將 products 暴露到全域，供其他模組讀取
+window.products = [
   {
     id: "original-drink",
     name: "翠峰甘露大道至簡",
