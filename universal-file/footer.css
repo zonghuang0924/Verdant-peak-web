@@ -45,3 +45,34 @@
 .Line-icon:hover {
   transform: scale(1.1);
 }
+
+.footer-links{
+  display: flex;
+  flex-wrap: wrap;              /* 小螢幕時自動換行 */
+  justify-content: center;      /* 水平置中對齊 */
+  align-items: center;          /* 垂直置中對齊 */
+  gap: 1rem;                    /* 自動間距 */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-links li {
+  margin: 0 15px;
+  position: relative;
+}
+
+.footer-links li a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.footer-links li a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #4CAF50;
+  border-radius: 8px;
+}

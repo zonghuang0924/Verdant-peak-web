@@ -1,0 +1,69 @@
+#product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.product-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.product-card h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #006d5b;
+}
+
+.product-card .description {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+.product-card .price {
+  font-size: 1rem;
+  color: #c44300;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.product-card .add-to-cart {
+  background-color: #006d5b;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-card .add-to-cart:hover {
+  background-color: #009b86;
+}
+
+.product-card img {
+  width: 100%;             /* 圖片寬度為容器寬度 */
+  max-width: 200px;        /* 最大寬度 */
+  height: auto;            /* 自動調整高度，保持比例 */
+  object-fit: cover;       /* 裁切並填滿區域 */
+  border-radius: 8px;      /* 圓角讓圖片更柔和 */
+  margin-bottom: 1rem;
+}

@@ -1,8 +1,54 @@
-html {
-  background-color: #7ba7a6;
-  padding-top: 80px
+/* 背景色樣式 */
+
+.bg-light-green {
+  background-color: #e6f4f1;
+  padding: 60px 20px;
 }
-body {
-  background: linear-gradient(to top, #7cbda9, #82c8d0);
-  /* 從上往下 淡粉到淺橘 */
+
+.bg-beige {
+  background-color: #f9f4e7;
+  padding: 60px 20px;
+}
+
+.bg-light-gray {
+  background-color: #f0f0f0;
+  padding: 60px 20px;
+}
+
+.bg-light-pink {
+  background-color: #ffd8ff;
+  padding: 60px 20px;
+}
+
+/* 統一 section-content 的排版 */
+.section-content {
+  max-width: 960px;
+  margin: 0 auto;
+  font-size: 1.1em;
+  line-height: 1.8;
+}
+
+/* 共通區塊樣式 */
+.card-section {
+  padding: 80px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* 卡片感效果 */
+.card-section .section-content {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 960px;
+  margin: 0 auto;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 滑鼠懸停時浮得更明顯 */
+.card-section .section-content:hover {
+  transform: translateY(-25px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
