@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="../../universal-file/nav.css"><!--匯入導覽列美化-->
   <link rel="stylesheet" href="../../universal-file/footer.css"><!--匯入尾頁美化-->
   <script src="../../universal-file/allpage.js" defer></script>
-    <script src="../../universal-file/productData.js"></script><!--匯入產品資料的js-->
-    <script src="../../web-core/products-folder/products.js" defer></script><!--匯入產品展示主js檔案-->
-    <script src="../../online-shop-system/cart.js"></script><!--匯入購物車系統-->
+  <script src="../../universal-file/productData.js"></script><!--匯入產品資料的js-->
+  <script src="../../web-core/products-folder/products.js" defer></script><!--匯入產品展示主js檔案-->
+  <script src="../../online-shop-system/cart.js"></script><!--匯入購物車系統-->
 </head>
 <body>
 
@@ -27,7 +27,7 @@
       .catch(err => {
         console.error('導覽列載入失敗:', err);
       });
-    fetch('../universal-file/nav.html')
+    fetch('../../universal-file/nav.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('navbar').innerHTML = html;
