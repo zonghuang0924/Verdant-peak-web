@@ -16,51 +16,44 @@
 <body>
 
   <!-- 導覽列（Navbar） -->
-  <div id="navbar"></div>
-  <script>
-    fetch('../../universal-file/nav.html')
-      .then(response => {
-        if (!response.ok) throw new Error('Navbar fetch failed');
-        return response.text();
-      })
-      .then(data => {
-        document.getElementById('navbar').innerHTML = data;
+  <div id="navbar-placeholder"></div>
 
-        updateCartDisplay();
+<script>
+  fetch('../../universal-file/nav.html')
+    .then(response => {
+      if (!response.ok) throw new Error('導覽列載入失敗');
+      return response.text();
+    })
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
 
-        let prevScrollPos = window.pageYOffset;
-        const navbar = document.getElementById("navbar");
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const navLinks = document.getElementById('nav-links');
+      // 等 nav 載入完再抓元素初始化互動
+      updateCartDisplay();
 
-        window.addEventListener('scroll', function() {
-          const currentScrollPos = window.pageYOffset;
-          if (prevScrollPos > currentScrollPos) {
-            navbar.style.top = "0";
-            navbar.classList.remove("transparent");
-          } else {
-            navbar.style.top = "-80px";
-            navbar.classList.add("transparent");
-          }
-          prevScrollPos = currentScrollPos;
-        });
+      let prevScrollPos = window.pageYOffset;
+      const navbar = document.getElementById("navbar");
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const navLinks = document.getElementById('nav-links');
 
-        hamburgerBtn.addEventListener('click', function() {
-          navLinks.classList.toggle('active');
-        });
-      })
-      .catch(err => {
-        console.error('導覽列載入失敗:', err);
+      window.addEventListener('scroll', function () {
+        const currentScrollPos = window.pageYOffset;
+        if (prevScrollPos > currentScrollPos) {
+          navbar.style.top = "0";
+          navbar.classList.remove("transparent");
+        } else {
+          navbar.style.top = "-80px";
+          navbar.classList.add("transparent");
+        }
+        prevScrollPos = currentScrollPos;
       });
-  </script>
 
-  <!-- 品牌主視覺輪播 -->
-  <section id="hero-carousel">
-    <div class="carousel-slide">
-      <img src="images/hero1.jpg" alt="主視覺 1" />
-      <div class="carousel-caption">自然 × 健康 × 科技</div>
-    </div>
-  </section>
+      hamburgerBtn.addEventListener('click', function () {
+        navLinks.classList.toggle('active');
+      });
+
+    })
+    .catch(err => console.error(err));
+</script>
 
   <!-- 公司簡介 -->
   <h2>公司簡介</h2>
