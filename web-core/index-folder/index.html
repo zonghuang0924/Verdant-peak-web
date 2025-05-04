@@ -16,7 +16,7 @@
   <!-- 導覽列（Navbar） -->
   <div id="navbar-placeholder"></div>
   <script>
-    fetch('/nav.html')
+    fetch('../../universal-file/nav.html')
       .then(response => {
         if (!response.ok) throw new Error('Navbar fetch failed');
         return response.text();
