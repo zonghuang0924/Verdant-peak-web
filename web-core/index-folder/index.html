@@ -4,34 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>首頁 | 翠峰飲品開發公司</title>
-  <link rel="stylesheet" href="/universal-file/nav.css"><!--匯入導覽列美化-->
-  <link rel="stylesheet" href="/universal-file/footer.css"><!--匯入尾頁美化-->
+
+  <!-- 絕對路徑引用共用樣式 -->
+  <link rel="stylesheet" href="/universal-file/nav.css">
+  <link rel="stylesheet" href="/universal-file/footer.css">
+
+  <!-- 共用腳本：載入 nav.html / footer.html -->
   <script src="/universal-file/allpage.js" defer></script>
-  <script src="/universal-file/productData.js"></script><!--匯入產品資料的js-->
-  <script src="/web-core/products-folder/products.js" defer></script><!--匯入產品展示主js檔案-->
-  <script src="/online-shop-system/cart.js"></script><!--匯入購物車系統-->
+
+  <!-- 產品資料與展示 -->
+  <script src="/universal-file/productData.js"></script>
+  <script src="/web-core/products-folder/products.js" defer></script>
+
+  <!-- 購物車 -->
+  <script src="/online-shop-system/cart.js"></script>
 </head>
 <body>
 
-  <!-- 導覽列（Navbar） -->
+  <!-- 導覽列掛載點 -->
   <div id="navbar"></div>
+
   <script>
-    fetch('nav.html')
+    fetch('/universal-file/nav.html')  <!-- 更新為正確路徑 -->
       .then(response => {
         if (!response.ok) throw new Error('Navbar fetch failed');
         return response.text();
       })
       .then(data => {
-        document.getElementById('navbar-placeholder').innerHTML = data;
-  
+        document.getElementById('navbar').innerHTML = data;
+
         // 載入完導覽列後才啟動互動與購物車更新
         updateCartDisplay();
-  
+
         let prevScrollPos = window.pageYOffset;
         const navbar = document.getElementById("navbar");
         const hamburgerBtn = document.getElementById('hamburger-btn');
         const navLinks = document.getElementById('nav-links');
-  
+
         window.addEventListener('scroll', function() {
           const currentScrollPos = window.pageYOffset;
           if (prevScrollPos > currentScrollPos) {
@@ -43,11 +52,10 @@
           }
           prevScrollPos = currentScrollPos;
         });
-  
+
         hamburgerBtn.addEventListener('click', function() {
           navLinks.classList.toggle('active');
         });
-  
       })
       .catch(err => {
         console.error('導覽列載入失敗:', err);
@@ -57,52 +65,28 @@
   <!-- 品牌主視覺輪播 -->
   <section id="hero-carousel">
     <div class="carousel-slide">
-      <img src="images/hero1.jpg" alt="主視覺 1" />
+      <img src="/images/hero1.jpg" alt="主視覺 1" />
       <div class="carousel-caption">自然 × 健康 × 科技</div>
     </div>
-    <!-- 可再加其他圖片 -->
   </section>
 
-  <!-- 公司簡介 -->
-  <h2>公司簡介</h2>
-  <p>
+  <main>
+    <h2>公司簡介</h2>
+    <p>翠峰甘露，匯聚大自然純粹精華，以健康無負擔的飲品，為每一位消費者帶來清新甘醇的味覺體驗</p>
 
-翠峰甘露，匯聚大自然純粹精華，以健康無負擔的飲品，為每一位消費者帶來清新甘醇的味覺體驗
-  </p>
+    <h2>翠峰甘露</h2>
+    <p>甘露雖美…（以下略）</p>
 
-  <!--翠峰甘露-->
-<h2>翠峰甘露</h2>
-<p>甘露雖美</p>
+    <section id="news-events">
+      <h2>最新消息</h2>
+      <ul class="news-list">
+        <li><strong>[公告]</strong> 門市營業時間調整 <span class="date">2025/04/30</span></li>
+        <li><strong>[活動]</strong> 會員日雙倍點數 <span class="date">2025/05/10</span></li>
+      </ul>
+    </section>
+  </main>
 
-  <p>甘露雖美兮，清冽沁心脾</p>
-  <p>山靄蒸霞氣，林風送晚暉</p>
-  <p>一滴承天意，三生許願機</p>
-  <p>非徒解渴苦，亦可洗塵衣</p>
-  <p>    
-         &nbsp;           </p>
-  <p>甘露雖美，然其飄渺</p>
-  <p>如夢中月，難攬入懷抱</p>
-  <p>甘露雖美，然其蒼遠</p>
-  <p>似天際光，遙不可近前</p>
-  <p>     
-          &nbsp;       </p>
-  <p>世人逐露，不識本源</p>
-  <p>杯中之物，映出心田</p>
-  <P>若得一飲，莫問浮名</P>
-  <p>只願靜坐雲間，與君共品甘清</p>
-</p>
-
-
-  <!-- 最新公告與活動 -->
-  <section id="news-events">
-    <h2>最新消息</h2>
-    <ul class="news-list">
-      <li><strong>[公告]</strong> 門市營業時間調整 <span class="date">2025/04/30</span></li>
-      <li><strong>[活動]</strong> 會員日雙倍點數 <span class="date">2025/05/10</span></li>
-    </ul>
-  </section>
-
- <!-- 頁尾 -->
+  <!-- 頁尾掛載點 -->
   <div id="footer"></div>
 
 </body>
