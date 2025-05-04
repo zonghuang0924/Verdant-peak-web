@@ -3,6 +3,8 @@
     { "source": "/",       "destination": "/web-core/index-folder/index.html" },
     { "source": "/about",   "destination": "/web-core/about-folder/about.html" },
     { "source": "/about/",  "destination": "/web-core/about-folder/about.html" },
+    { "source": "/nav",   "destination": "/universal-file/nav.html" },
+    { "source": "/nav/",  "destination": "/universal-file/nav.html" },
     { "source": "/products","destination": "/web-core/products-folder/products.html" },
     { "source": "/products/","destination": "/web-core/products-folder/products.html" },
     { "source": "/contact", "destination": "/web-core/contact-folder/contact.html" },
