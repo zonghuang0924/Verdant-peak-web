@@ -17,7 +17,7 @@
   <!-- 導覽列（Navbar） -->
   <div id="navbar-placeholder"></div>
   <script>
-    fetch('../../universal-file/nav.html')
+    fetch('../universal-file/nav.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('navbar').innerHTML = html;
