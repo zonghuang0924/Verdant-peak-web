@@ -1,12 +1,12 @@
 {
   "rewrites": [
     { "source": "/",       "destination": "/web-core/index-folder/index.html" },
-    { "source": "/about",   "destination": "/web-core/index-folder/about.html" },
-    { "source": "/about/",  "destination": "/web-core/index-folder/about.html" },
-    { "source": "/products","destination": "/web-core/index-folder/products.html" },
-    { "source": "/products/","destination": "/web-core/index-folder/products.html" },
-    { "source": "/contact", "destination": "/web-core/index-folder/contact.html" },
-    { "source": "/contact/","destination": "/web-core/index-folder/contact.html" },
+    { "source": "/about",   "destination": "/web-core/about-folder/about.html" },
+    { "source": "/about/",  "destination": "/web-core/about-folder/about.html" },
+    { "source": "/products","destination": "/web-core/products-folder/products.html" },
+    { "source": "/products/","destination": "/web-core/products-folder/products.html" },
+    { "source": "/contact", "destination": "/web-core/contact-folder/contact.html" },
+    { "source": "/contact/","destination": "/web-core/contact-folder/contact.html" },
     { "source": "/cart",    "destination": "/online-shop-system/cart.html" },
     { "source": "/cart/",   "destination": "/online-shop-system/cart.html" }
   ]
