@@ -1,20 +1,95 @@
 {
   "version": 2,
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/",               "destination": "/web-core/index-folder/index.html" },
-    { "source": "/about",          "destination": "/web-core/about-folder/about.html" },
-    { "source": "/products",       "destination": "/web-core/products-folder/products.html" },
-    { "source": "/stores",         "destination": "/web-core/stores-folder/stores.html" },
-    { "source": "/kiosk",          "destination": "/web-core/kiosk-folder/kiosk.html" },
-    { "source": "/member",         "destination": "/web-core/member-folder/member.html" },
-    { "source": "/member-register","destination": "/web-core/member-folder/member-register.html" },
-    { "source": "/member-login",   "destination": "/web-core/member-folder/member-login.html" },
-    { "source": "/news",           "destination": "/web-core/news-folder/news.html" },
-    { "source": "/contact",        "destination": "/web-core/contact-folder/contact.html" },
-    { "source": "/policy",         "destination": "/web-core/policy-folder/policy.html" },
-    { "source": "/cart",           "destination": "/online-shop-system/cart.html" },
-    { "source": "/checkout",       "destination": "/online-shop-system/checkout.html" },
-    { "source": "/order-complete", "destination": "/online-shop-system/order_complete.html" }
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "web-core/**/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "web-core/**/**/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "universal-file/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "images/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "online-shop-system/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/web-core/index-folder/index.html"
+    },
+    {
+      "src": "/about",
+      "dest": "/web-core/about-folder/about.html"
+    },
+    {
+      "src": "/products",
+      "dest": "/web-core/products-folder/products.html"
+    },
+    {
+      "src": "/contact",
+      "dest": "/web-core/contact-folder/contact.html"
+    },
+    {
+      "src": "/stores",
+      "dest": "/web-core/stores-folder/stores.html"
+    },
+    {
+      "src": "/kiosk",
+      "dest": "/web-core/kiosk-folder/kiosk.html"
+    },
+    {
+      "src": "/member",
+      "dest": "/web-core/member-folder/member.html"
+    },
+    {
+      "src": "/news",
+      "dest": "/web-core/news-folder/news.html"
+    },
+    {
+      "src": "/policy",
+      "dest": "/web-core/policy-folder/policy.html"
+    },
+    {
+      "src": "/cart",
+      "dest": "/online-shop-system/cart.html"
+    },
+    {
+      "src": "/universal-file/nav.html",
+      "dest": "/universal-file/nav.html"
+    },
+    {
+      "src": "/universal-file/footer.html",
+      "dest": "/universal-file/footer.html"
+    },
+    {
+      "src": "/universal-file/nav.css",
+      "dest": "/universal-file/nav.css"
+    },
+    {
+      "src": "/universal-file/footer.css",
+      "dest": "/universal-file/footer.css"
+    },
+    {
+      "src": "/universal-file/allpage.js",
+      "dest": "/universal-file/allpage.js"
+    },
+    {
+      "src": "/universal-file/script.js",
+      "dest": "/universal-file/script.js"
+    }
   ]
 }
