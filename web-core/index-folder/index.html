@@ -14,40 +14,24 @@
 <body>
 
   <!-- 導覽列（Navbar） -->
-  <div id="navbar-placeholder"></div>
+  <div id="navbar"></div>
   <script>
-    fetch('/web-core/universal-file/nav.html')
+    fetch('/universal-file/nav.html')
       .then(response => {
         if (!response.ok) throw new Error('Navbar fetch failed');
         return response.text();
       })
       .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
-      })
-      .catch(err => {
-        console.error('導覽列載入失敗:', err);
-      });
-    fetch('/web-core/universal-file/nav.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('navbar').innerHTML = html;
-      })
-      .then(() => {
-        // 導覽列載入完，才執行購物車更新
+  
+        // 載入完導覽列後才啟動互動與購物車更新
         updateCartDisplay();
-      });
-    fetch('/web-core/universal-file/nav.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar-placeholder').innerHTML = data;
-      })
-      .then(() => {
-        // 等 navbar 載入後再啟動你的navbar滾動效果
+  
         let prevScrollPos = window.pageYOffset;
         const navbar = document.getElementById("navbar");
         const hamburgerBtn = document.getElementById('hamburger-btn');
         const navLinks = document.getElementById('nav-links');
-
+  
         window.addEventListener('scroll', function() {
           const currentScrollPos = window.pageYOffset;
           if (prevScrollPos > currentScrollPos) {
@@ -59,10 +43,14 @@
           }
           prevScrollPos = currentScrollPos;
         });
-
+  
         hamburgerBtn.addEventListener('click', function() {
           navLinks.classList.toggle('active');
         });
+  
+      })
+      .catch(err => {
+        console.error('導覽列載入失敗:', err);
       });
   </script>
 
