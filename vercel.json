@@ -1,9 +1,20 @@
 {
+  "version": 2,
+  "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/web-core/index-folder/index.html" },
-    { "source": "/about", "destination": "/web-core/about-folder/about.html" },
-    { "source": "/products", "destination": "/web-core/products-folder/products.html" },
-    { "source": "/contact", "destination": "/web-core/contact-folder/contact.html" },
-    { "source": "/cart", "destination": "/online-shop-system/cart.html" }
+    { "source": "/",               "destination": "/web-core/index-folder/index.html" },
+    { "source": "/about",          "destination": "/web-core/about-folder/about.html" },
+    { "source": "/products",       "destination": "/web-core/products-folder/products.html" },
+    { "source": "/stores",         "destination": "/web-core/stores-folder/stores.html" },
+    { "source": "/kiosk",          "destination": "/web-core/kiosk-folder/kiosk.html" },
+    { "source": "/member",         "destination": "/web-core/member-folder/member.html" },
+    { "source": "/member-register","destination": "/web-core/member-folder/member-register.html" },
+    { "source": "/member-login",   "destination": "/web-core/member-folder/member-login.html" },
+    { "source": "/news",           "destination": "/web-core/news-folder/news.html" },
+    { "source": "/contact",        "destination": "/web-core/contact-folder/contact.html" },
+    { "source": "/policy",         "destination": "/web-core/policy-folder/policy.html" },
+    { "source": "/cart",           "destination": "/online-shop-system/cart.html" },
+    { "source": "/checkout",       "destination": "/online-shop-system/checkout.html" },
+    { "source": "/order-complete", "destination": "/online-shop-system/order_complete.html" }
   ]
 }
