@@ -20,7 +20,7 @@
   <div id="navbar-placeholder"></div>
 
 <script>
-  fetch('../universal-file/nav.html')
+  fetch('/universal-file/nav.html')
     .then(response => {
       if (!response.ok) throw new Error('導覽列載入失敗');
       return response.text();
