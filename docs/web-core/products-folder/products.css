@@ -67,3 +67,38 @@
   border-radius: 8px;      /* 圓角讓圖片更柔和 */
   margin-bottom: 1rem;
 }
+
+#search-filter {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+#searchInput, #categoryFilter {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border: 2px solid #88b04b; /* 主色調 */
+  border-radius: 20px; /* 圓角效果 */
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 淺陰影 */
+  font-size: 1rem;
+}
+
+#searchInput:focus, #categoryFilter:focus {
+  border-color: #557a28; /* 聚焦時顏色 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 加深陰影 */
+}
+
+#searchInput::placeholder {
+  color: #aaa;
+}
+
+#categoryFilter {
+  background-color: #f7f7f7;
+  cursor: pointer;
+}
+
+#categoryFilter option {
+  background-color: #fff;
+  color: #333;
+}
