@@ -74,31 +74,32 @@
 }
 
 #searchInput, #categoryFilter {
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1rem;
   margin: 0.5rem;
-  border: 2px solid #88b04b; /* 主色調 */
-  border-radius: 20px; /* 圓角效果 */
+  border: 2px solid #ccc;
+  border-radius: 20px; /* 圓角化 */
+  font-size: 1rem;
   outline: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 淺陰影 */
-  font-size: 1rem;
 }
 
 #searchInput:focus, #categoryFilter:focus {
-  border-color: #557a28; /* 聚焦時顏色 */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 加深陰影 */
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-#searchInput::placeholder {
-  color: #aaa;
+#searchInput {
+  width: 250px; /* 搜尋框的寬度 */
 }
 
 #categoryFilter {
-  background-color: #f7f7f7;
-  cursor: pointer;
+  background-color: #f8f8f8;
+}
+
+#categoryFilter:hover, #searchInput:hover {
+  background-color: #f0f0f0;
 }
 
 #categoryFilter option {
-  background-color: #fff;
-  color: #333;
+  padding: 0.6rem;
 }
