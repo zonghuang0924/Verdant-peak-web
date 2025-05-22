@@ -28,33 +28,50 @@
     .then(data => {
       document.getElementById('navbar-placeholder').innerHTML = data;
 
-      // 等 nav 載入完再抓元素初始化互動
-      updateCartDisplay();
-
-      let prevScrollPos = window.pageYOffset;
-      const navbar = document.getElementById("navbar");
-      const hamburgerBtn = document.getElementById('hamburger-btn');
-      const navLinks = document.getElementById('nav-links');
-
-      window.addEventListener('scroll', function () {
-        const currentScrollPos = window.pageYOffset;
-        if (prevScrollPos > currentScrollPos) {
-          navbar.style.top = "0";
-          navbar.classList.remove("transparent");
-        } else {
-          navbar.style.top = "-80px";
-          navbar.classList.add("transparent");
-        }
-        prevScrollPos = currentScrollPos;
+      // ✅ 等畫面更新完成再初始化互動
+      requestAnimationFrame(() => {
+        initNavbar(); 
       });
-
-      hamburgerBtn.addEventListener('click', function () {
-        navLinks.classList.toggle('active');
-      });
-
     })
     .catch(err => console.error(err));
+
+  function initNavbar() {
+    // ✅ 初始化購物車數量顯示
+    if (typeof updateCartDisplay === 'function') {
+      updateCartDisplay();
+    }
+
+    const navbar = document.getElementById("navbar");
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    // ✅ 判斷元素是否真的存在
+    if (!navbar || !hamburgerBtn || !navLinks) {
+      console.warn('Navbar elements not found');
+      return;
+    }
+
+    // ✅ 捲動動畫
+    let prevScrollPos = window.pageYOffset;
+    window.addEventListener('scroll', function () {
+      const currentScrollPos = window.pageYOffset;
+      if (prevScrollPos > currentScrollPos) {
+        navbar.style.top = "0";
+        navbar.classList.remove("transparent");
+      } else {
+        navbar.style.top = "-80px";
+        navbar.classList.add("transparent");
+      }
+      prevScrollPos = currentScrollPos;
+    });
+
+    // ✅ 漢堡選單
+    hamburgerBtn.addEventListener('click', function () {
+      navLinks.classList.toggle('active');
+    });
+  }
 </script>
+
 
   <!-- 公司簡介 -->
   <section id="history-founder" class="Title-be">
