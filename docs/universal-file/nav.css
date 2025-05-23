@@ -197,12 +197,15 @@ body {
   visibility: visible;
 }
 
+/* nav內部的容器 */
 .nav-container {
+  width: 100%;
+  max-width: 2000px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
   position: relative;
-  padding: 0 1rem;
 }
 
 .nav-icons {
