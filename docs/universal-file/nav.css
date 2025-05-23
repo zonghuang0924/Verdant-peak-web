@@ -208,29 +208,40 @@ body {
   visibility: visible;
 }
 
-/* 手機版樣式 */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* 手機版顯示漢堡按鈕 */
 @media (max-width: 768px) {
   .hamburger-btn {
     display: flex;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
   }
 
   .nav-links {
     display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: #fff;
-    width: 200px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-    z-index: 1000;
+    /* 其他手機下展開樣式 */
   }
 
   .nav-links.active {
     display: flex;
+    /* 展開樣式 */
+  }
+}
+
+/* 桌面版隱藏漢堡按鈕 */
+@media (min-width: 769px) {
+  .hamburger-btn {
+    display: none;
   }
 }
