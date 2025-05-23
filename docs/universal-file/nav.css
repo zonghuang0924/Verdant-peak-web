@@ -23,17 +23,6 @@ body {
   transform: translateY(0);
 }
 
-/* nav內部的容器 */
-.nav-container {
-  width: 100%;
-  max-width: 2000px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  position: relative;
-}
-
 /* logo樣式 */
 .logo-text {
   font-size: 24px;
