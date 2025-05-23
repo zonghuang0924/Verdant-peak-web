@@ -32,3 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
     console.error("Hamburger button or nav links not found.");
   }
 });
+
+hamburgerBtn.addEventListener('click', function () {
+  navLinks.classList.toggle('active');
+});
