@@ -20,6 +20,11 @@
   <div id="navbar-placeholder"></div>
 
 <script>
+  fetch('/universal-file/footer.html')
+    .then(response => {
+      if (!response.ok) throw new Error('尾頁載入失敗');
+      return response.text();
+    })
   fetch('/universal-file/nav.html')
     .then(response => {
       if (!response.ok) throw new Error('導覽列載入失敗');
@@ -72,7 +77,6 @@
   }
 </script>
 
-
   <!-- 公司簡介 -->
   <section id="history-founder" class="Title-be">
     <h2>公司簡介</h2>
@@ -112,7 +116,7 @@
   </section>
 
   <!-- 頁尾 -->
-  <div id="footer"></div>
+  <div id="footer-placeholder"></div>
 
 </body>
 </html>
