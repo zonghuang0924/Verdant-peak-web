@@ -116,6 +116,20 @@
       });
   </script>
 
+<script>
+  window.products.forEach(product => {
+    const card = document.createElement("div");
+    card.innerHTML = `
+      <img src="${product.image}" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <p>${product.description}</p>
+      <p>NT$${product.price}</p>
+      <button>加入購物車</button>
+    `;
+    document.body.appendChild(card);
+  });
+</script>
+
   <!-- 頁尾 -->
   <div id="footer"></div>
 

@@ -3,7 +3,7 @@ import sqlite3
 import datetime
 import uuid
 
-app = Flask(__name__, static_folder='static', static_url_path='/static')
+app = Flask(__name__, static_folder='.', static_url_path='')
 CART = []
 
 def init_db():
@@ -62,7 +62,6 @@ def checkout():
 
     global CART
     CART = []
-
     return jsonify({"order_id": order_id, "status": "處理中"})
 
 @app.route('/api/order/<order_id>', methods=['GET'])
