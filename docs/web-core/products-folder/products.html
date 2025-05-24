@@ -81,6 +81,41 @@
   <h1>商品展示</h1>
   <div id="product-list"></div>
 
+ <script>
+    // 載入商品並顯示
+    fetch('/api/products')
+      .then(res => res.json())
+      .then(products => {
+        const list = document.getElementById('product-list');
+        products.forEach(product => {
+          const card = document.createElement('div');
+          card.className = 'product-card';
+          card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <p class="price">NT$${product.price}</p>
+            <button class="add-to-cart" data-id="${product.id}">加入購物車</button>
+          `;
+          list.appendChild(card);
+        });
+
+        // 綁定購物車按鈕
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+          button.addEventListener('click', () => {
+            const productId = button.dataset.id;
+            fetch('/api/cart', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify({ id: productId, quantity: 1 })
+            })
+            .then(res => res.json())
+            .then(data => alert(data.message || '加入購物車成功'));
+          });
+        });
+      });
+  </script>
+
   <!-- 頁尾 -->
   <div id="footer"></div>
 

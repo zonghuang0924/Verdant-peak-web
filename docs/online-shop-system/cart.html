@@ -26,5 +26,32 @@
     <button onclick="window.location.href='checkout.html'">前往結帳</button>
 
     <script src="../web-core/products-folder/products.js"></script>
+
+ <script>
+    fetch('/api/cart')
+      .then(res => res.json())
+      .then(items => {
+        const tbody = document.getElementById('cart-items');
+        let total = 0;
+        items.forEach(item => {
+          const subtotal = item.price * item.quantity;
+          total += subtotal;
+
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${item.name}</td>
+            <td>${item.price}</td>
+            <td>${item.quantity}</td>
+            <td>${subtotal}</td>
+            <td><button class="remove">X</button></td>
+          `;
+          tbody.appendChild(row);
+        });
+        document.getElementById('total-price').textContent = total;
+      });
+  </script>
+
+  <script src="/static/js/productData.js"></script>
+
 </body>
 </html>

@@ -36,5 +36,47 @@
     </form>
 
     <script src="script.js"></script>
+
+ <script>
+    let cartItems = [];
+
+    // 顯示購物車內容
+    fetch('/api/cart')
+      .then(res => res.json())
+      .then(data => {
+        cartItems = data;
+        const container = document.getElementById('checkout-cart');
+        container.innerHTML = '<h3>您的商品：</h3>';
+        data.forEach(item => {
+          container.innerHTML += `
+            <p>${item.name} x${item.quantity} = NT$${item.price * item.quantity}</p>
+          `;
+        });
+      });
+
+    document.getElementById('checkout-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      fetch('/api/checkout', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          name: document.getElementById('name').value,
+          address: document.getElementById('address').value,
+          payment: document.getElementById('payment').value,
+          shipping: document.getElementById('shipping').value,
+          items: cartItems
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        localStorage.setItem('orderId', data.order_id);
+        window.location.href = 'order-complete.html';
+      });
+    });
+  </script>
+
+<script src="/static/js/productData.js"></script>
+
 </body>
 </html>

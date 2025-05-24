@@ -13,5 +13,23 @@
     <p>運送狀態：<span id="shipping-status">處理中</span></p>
 
     <script src="script.js"></script>
+
+ <script>
+    const orderId = localStorage.getItem('orderId');
+    if (!orderId) {
+      document.getElementById('order-id').textContent = '無法取得';
+      document.getElementById('shipping-status').textContent = '無法查詢';
+    } else {
+      fetch(`/api/order/${orderId}`)
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('order-id').textContent = data.order_id;
+          document.getElementById('shipping-status').textContent = data.status;
+        });
+    }
+  </script>
+
+<script src="/static/js/productData.js"></script>
+
 </body>
 </html>
