@@ -226,9 +226,29 @@ body {
   }
 
   .nav-links.active {
-    display: flex;
-    /* 展開樣式 */
-  }
+  position: absolute;
+  top: 80px; /* 根據你的 nav 高度調整 */
+  left: 0;
+  right: 0;
+  width: 100%;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1rem 0;
+  display: flex;
+  align-items: flex-start; /* 左對齊 */
+  gap: 0; /* 取消間距 */
+  z-index: 999;
+}
+
+.nav-links.active li {
+  width: 100%;
+}
+
+.nav-links.active li a {
+  width: 100%;
+  padding: 12px 24px;
+  font-size: 18px;
+}
 }
 
 /* 桌面版隱藏漢堡按鈕 */
