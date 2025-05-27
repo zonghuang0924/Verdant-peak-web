@@ -217,22 +217,25 @@ body {
 /* 手機版顯示漢堡按鈕 */
 @media (max-width: 768px) {
   .nav-links {
-    display: flex;
-    flex-direction: column;
     position: fixed;
     top: 0;
-    right: -100%; /* 預設藏起來 */
+    left: -250px; /* 一開始隱藏在畫面左側 */
     width: 250px;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.97);
-    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
-    padding-top: 80px; /* 騰出空間避免蓋住 navbar */
-    transition: right 0.3s ease;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding-top: 80px; /* 預留 navbar 高度 */
+    padding-left: 1rem;
+    gap: 1rem;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.15);
     z-index: 999;
+    transition: left 0.3s ease;
   }
 
   .nav-links.active {
-    right: 0; /* 滑出 */
+    left: 0; /* 滑出來 */
   }
 
   .nav-links li {
@@ -242,31 +245,8 @@ body {
   .nav-links li a {
     display: block;
     width: 100%;
-    padding: 16px 24px;
     font-size: 18px;
-    border-bottom: 1px solid #ddd;
-  }
-
-  /* 若有 dropdown，可調整樣式 */
-  .dropdown-content {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: transparent;
-    opacity: 1;
-    visibility: visible;
-    padding: 0;
-    box-shadow: none;
-  }
-
-  .dropdown-content li a {
-    padding-left: 40px;
-  }
-
-  .dropdown:hover .dropdown-content {
-    opacity: 1;
-    visibility: visible;
+    padding: 10px 15px;
   }
 }
 
