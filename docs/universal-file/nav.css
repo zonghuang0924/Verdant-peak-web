@@ -214,39 +214,28 @@ body {
   gap: 1rem;
 }
 
-/* 手機版顯示漢堡按鈕 */
+/* 手機版漢堡選單展開樣式 */
 @media (max-width: 768px) {
   .nav-links {
-    position: fixed;
-    top: 0;
-    left: -250px; /* 一開始隱藏在畫面左側 */
-    width: 250px;
-    height: 100%;
+    display: none;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    position: absolute;
+    top: 80px; /* 對齊 navbar 下方 */
+    left: 0;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
-    padding-top: 80px; /* 預留 navbar 高度 */
-    padding-left: 1rem;
-    gap: 1rem;
-    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.15);
-    z-index: 999;
-    transition: left 0.3s ease;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
   }
 
   .nav-links.active {
-    left: 0; /* 滑出來 */
+    display: flex;
   }
 
   .nav-links li {
-    width: 100%;
-  }
-
-  .nav-links li a {
-    display: block;
-    width: 100%;
-    font-size: 18px;
-    padding: 10px 15px;
+    text-align: center;
+    margin: 0.5rem 0;
   }
 }
 
