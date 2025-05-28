@@ -216,25 +216,25 @@ body {
 
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* 預設隱藏 */
-    flex-direction: column;
     position: fixed;
-    top: 80px; /* 頂部往下推，避開 navbar */
-    left: 0;
-    height: auto; /* 高度自動 */
-    max-height: calc(100vh - 80px); /* 最大高度為視窗高度減 navbar */
-    width: 100vw;
+    top: 0;
+    right: 0; /* 從右邊滑出 */
+    height: 100vh;
+    width: 250px; /* 側邊選單寬度 */
     background-color: rgba(255, 255, 255, 0.98);
-    padding: 20px 0; /* 頂底內距 */
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-    overflow-y: auto; /* 超過高度可滾動 */
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%); /* 預設在畫面外（右側） */
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    gap: 1.5rem;
     z-index: 999;
+    align-items: flex-start;
   }
 
   .nav-links.active {
-    display: flex; /* 點漢堡後顯示 */
+    transform: translateX(0); /* 顯示時移回畫面 */
   }
 
   /* 漢堡按鈕顯示 */
