@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="/universal-file/footer.css">
   <link rel="stylesheet" href="index.css">
   <script src="index.js" defer></script>
-  <script src="../universal-file/allpage.js" defer></script>
   <script src="../universal-file/productData.js"></script>
   <script src="../web-core/products-folder/products.js" defer></script>
   <script src="../online-shop-system/cart.js"></script>
@@ -20,18 +19,7 @@
   <div id="navbar-placeholder"></div>
 
 <script>
-  // 載入 footer.html
-  fetch('/universal-file/footer.html')
-    .then(response => {
-      if (!response.ok) throw new Error('尾頁載入失敗');
-      return response.text();
-    })
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    })
-    .catch(err => console.error(err));
-
-  // 載入 nav.html 並初始化 navbar
+  // 載入 nav.html 並初始化
   fetch('/universal-file/nav.html')
     .then(response => {
       if (!response.ok) throw new Error('導覽列載入失敗');
@@ -39,48 +27,60 @@
     })
     .then(data => {
       document.getElementById('navbar-placeholder').innerHTML = data;
+
+      // ✅ 等 DOM 插入完再初始化
       requestAnimationFrame(() => {
-        initNavbar(); 
+        initNavbar();
       });
     })
     .catch(err => console.error(err));
 
   function initNavbar() {
     const navbar = document.getElementById("navbar");
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const navLinks = document.getElementById('nav-links');
+    const hamburgerBtn = document.getElementById("hamburger-btn");
+    const navLinks = document.getElementById("nav-links");
+    const cartCountSpan = document.getElementById("cart-count");
 
-    // ✅ 確認元素是否正確載入
-    if (!navbar || !hamburgerBtn || !navLinks) {
-      console.warn('Navbar elements not found');
+    if (!navbar) {
+      console.error("Navbar element not found.");
       return;
     }
-
-    // ✅ 購物車數量初始化（如果有的話）
-    if (typeof updateCartDisplay === 'function') {
-      updateCartDisplay();
+    if (!hamburgerBtn || !navLinks) {
+      console.error("Hamburger button or nav links not found.");
     }
 
-    // ✅ 捲動時 navbar 隱藏動畫
+    // 捲動隱藏/顯示 navbar
     let prevScrollPos = window.pageYOffset;
-    window.addEventListener('scroll', function () {
+    const scrollThreshold = 10;
+
+    window.addEventListener("scroll", () => {
       const currentScrollPos = window.pageYOffset;
-      if (prevScrollPos > currentScrollPos) {
+      const diff = prevScrollPos - currentScrollPos;
+
+      if (diff > scrollThreshold) {
         navbar.style.top = "0";
         navbar.classList.remove("transparent");
-      } else {
+      } else if (diff < -scrollThreshold) {
         navbar.style.top = "-80px";
         navbar.classList.add("transparent");
       }
+
       prevScrollPos = currentScrollPos;
     });
 
-    // ✅ 漢堡按鈕開關
-    hamburgerBtn.addEventListener("click", () => {
+    // 漢堡按鈕切換選單
+    hamburgerBtn?.addEventListener("click", () => {
       navLinks.classList.toggle("active");
     });
+
+    // 購物車數量顯示
+    const cartCount = localStorage.getItem("cartCount") || 0;
+    if (cartCountSpan) {
+      cartCountSpan.textContent = cartCount;
+    }
   }
 </script>
+
 
   <!-- 公司簡介 -->
   <section id="history-founder" class="Title-be">

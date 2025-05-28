@@ -1,10 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
+// 載入 nav.html 並初始化
+fetch('/universal-file/nav.html')
+  .then(response => {
+    if (!response.ok) throw new Error('導覽列載入失敗');
+    return response.text();
+  })
+  .then(data => {
+    document.getElementById('navbar-placeholder').innerHTML = data;
+
+    // ✅ 等 DOM 插入完再初始化
+    requestAnimationFrame(() => {
+      initNavbar();
+    });
+  })
+  .catch(err => console.error(err));
+
+function initNavbar() {
   const navbar = document.getElementById("navbar");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const navLinks = document.getElementById("nav-links");
   const cartCountSpan = document.getElementById("cart-count");
 
-  // === 防呆檢查 ===
   if (!navbar) {
     console.error("Navbar element not found.");
     return;
@@ -13,20 +28,18 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Hamburger button or nav links not found.");
   }
 
-  // === 導覽列滾動隱藏/顯示 ===
+  // 捲動隱藏/顯示 navbar
   let prevScrollPos = window.pageYOffset;
-  const scrollThreshold = 10; // 差值閾值，避免小幅滾動誤判
+  const scrollThreshold = 10;
 
   window.addEventListener("scroll", () => {
     const currentScrollPos = window.pageYOffset;
     const diff = prevScrollPos - currentScrollPos;
 
     if (diff > scrollThreshold) {
-      // 向上滾動
       navbar.style.top = "0";
       navbar.classList.remove("transparent");
     } else if (diff < -scrollThreshold) {
-      // 向下滾動
       navbar.style.top = "-80px";
       navbar.classList.add("transparent");
     }
@@ -34,14 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
     prevScrollPos = currentScrollPos;
   });
 
-  // === 漢堡按鈕切換選單 ===
+  // 漢堡按鈕切換選單
   hamburgerBtn?.addEventListener("click", () => {
     navLinks.classList.toggle("active");
   });
 
-  // === 顯示購物車數量 ===
+  // 購物車數量顯示
   const cartCount = localStorage.getItem("cartCount") || 0;
   if (cartCountSpan) {
     cartCountSpan.textContent = cartCount;
   }
-});
+}
