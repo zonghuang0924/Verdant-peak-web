@@ -20,11 +20,18 @@
   <div id="navbar-placeholder"></div>
 
 <script>
+  // 載入 footer.html
   fetch('/universal-file/footer.html')
     .then(response => {
       if (!response.ok) throw new Error('尾頁載入失敗');
       return response.text();
     })
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(err => console.error(err));
+
+  // 載入 nav.html 並初始化 navbar
   fetch('/universal-file/nav.html')
     .then(response => {
       if (!response.ok) throw new Error('導覽列載入失敗');
@@ -32,8 +39,6 @@
     })
     .then(data => {
       document.getElementById('navbar-placeholder').innerHTML = data;
-
-      // ✅ 等畫面更新完成再初始化互動
       requestAnimationFrame(() => {
         initNavbar(); 
       });
@@ -41,22 +46,22 @@
     .catch(err => console.error(err));
 
   function initNavbar() {
-    // ✅ 初始化購物車數量顯示
-    if (typeof updateCartDisplay === 'function') {
-      updateCartDisplay();
-    }
-
     const navbar = document.getElementById("navbar");
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const navLinks = document.getElementById('nav-links');
 
-    // ✅ 判斷元素是否真的存在
+    // ✅ 確認元素是否正確載入
     if (!navbar || !hamburgerBtn || !navLinks) {
       console.warn('Navbar elements not found');
       return;
     }
 
-    // ✅ 捲動動畫
+    // ✅ 購物車數量初始化（如果有的話）
+    if (typeof updateCartDisplay === 'function') {
+      updateCartDisplay();
+    }
+
+    // ✅ 捲動時 navbar 隱藏動畫
     let prevScrollPos = window.pageYOffset;
     window.addEventListener('scroll', function () {
       const currentScrollPos = window.pageYOffset;
@@ -70,10 +75,10 @@
       prevScrollPos = currentScrollPos;
     });
 
-    // === 漢堡按鈕切換選單 ===
-  hamburgerBtn?.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
+    // ✅ 漢堡按鈕開關
+    hamburgerBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
   }
 </script>
 

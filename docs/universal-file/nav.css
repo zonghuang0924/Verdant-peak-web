@@ -216,6 +216,7 @@ body {
 
 @media (max-width: 768px) {
   .nav-links {
+    display: none; /* ✅ 預設隱藏 */
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -231,13 +232,30 @@ body {
   }
 
   .nav-links.active {
-    display: flex; /* 點擊漢堡才顯示 */
+    display: flex; /* ✅ 點漢堡後顯示 */
+  }
+
+  .hamburger-btn {
+    display: flex; /* ✅ 手機版顯示漢堡 */
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .hamburger-btn .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 4px;
+    transition: all 0.3s ease;
   }
 }
 
-/* 桌面版隱藏漢堡按鈕 */
 @media (min-width: 769px) {
   .hamburger-btn {
-    display: none;
+    display: none; /* ✅ 桌面版不顯示漢堡 */
   }
 }
