@@ -55,6 +55,25 @@
       console.warn('Navbar elements not found');
       return;
     }
+
+    // ✅ 捲動動畫
+    let prevScrollPos = window.pageYOffset;
+    window.addEventListener('scroll', function () {
+      const currentScrollPos = window.pageYOffset;
+      if (prevScrollPos > currentScrollPos) {
+        navbar.style.top = "0";
+        navbar.classList.remove("transparent");
+      } else {
+        navbar.style.top = "-80px";
+        navbar.classList.add("transparent");
+      }
+      prevScrollPos = currentScrollPos;
+    });
+
+    // ✅ 漢堡選單
+    hamburgerBtn.addEventListener('click', function () {
+      navLinks.classList.toggle('active');
+    });
   }
 </script>
 
