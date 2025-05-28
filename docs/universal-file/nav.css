@@ -216,7 +216,6 @@ body {
 
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* 預設隱藏 */
     flex-direction: column;
     position: fixed;
     top: 0;
