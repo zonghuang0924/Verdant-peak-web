@@ -58,3 +58,11 @@ function initNavbar() {
     cartCountSpan.textContent = cartCount;
   }
 }
+
+const hamburgerBtn = document.getElementById("hamburger-btn");
+const navLinks = document.getElementById("nav-links");
+
+hamburgerBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  hamburgerBtn.classList.toggle("active");
+});
