@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexelink Game</title>
+  <link rel="stylesheet" href="/css/nav.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <main style="padding-top: 80px; padding-bottom: 100px;">
+    <h1 style="text-align:center;">Nexelink Game 平台</h1>
+    <p style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+      Nexelink Game 是我們專為遊戲愛好者打造的遊戲開發與遊玩平台。我們將復古與現代元素融合，開發出一系列有趣的 2D 小遊戲與多人對戰系統。
+      玩家可享有以下功能：
+      <ul style="max-width: 700px; margin: 20px auto; line-height: 2;">
+        <li>👾 免費遊戲與付費遊戲平台</li>
+        <li>🕹️ 即時對戰與好友邀請機制</li>
+        <li>🎯 排行榜與成就系統</li>
+        <li>🎨 客製化遊戲角色與裝備</li>
+        <li>🌐 Web / APP 雙版本同步遊玩</li>
+      </ul>
+      若您有遊戲開發需求，或希望合作發佈遊戲，歡迎聯絡我們 Nexelink 團隊！
+    </p>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="/js/nav.js"></script>
+  <script>
+    fetch('/components/nav.html').then(res => res.text()).then(data => document.getElementById('nav-placeholder').innerHTML = data);
+    fetch('/components/footer.html').then(res => res.text()).then(data => document.getElementById('footer-placeholder').innerHTML = data);
+  </script>
+</body>
+</html>

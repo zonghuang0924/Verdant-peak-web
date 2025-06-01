@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>條款與政策 | Nexelink</title>
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <style>
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 100px 20px;
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.8;
+    }
+    h1 {
+      text-align: center;
+      color: #00ffff;
+      margin-bottom: 40px;
+    }
+    h2 {
+      margin-top: 32px;
+      color: #00cccc;
+    }
+  </style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <h1>條款與政策</h1>
+
+    <h2>一、隱私權政策</h2>
+    <p>本網站致力於保護您的個人資料。我們僅在必要範圍內收集資訊，並僅用於處理訂單、聯絡與服務優化等用途，不會出售或提供第三方使用。</p>
+
+    <h2>二、使用者條款</h2>
+    <p>使用本網站即表示您同意遵守我們的使用規範，包括但不限於：不進行惡意攻擊、不重製本站內容、不未經授權使用我們的資源。</p>
+
+    <h2>三、退換貨與取消政策（適用於購物與訂製服務）</h2>
+    <ul>
+      <li>如為非客製化商品，7 日內可辦理退換貨（需保持完整包裝與未使用）。</li>
+      <li>客製化網站／系統一經付款即無法取消，若有特殊情況請與我們聯絡。</li>
+    </ul>
+
+    <h2>四、智慧財產權保護</h2>
+    <p>Nexelink 網站所有內容，包括但不限於：圖示、文字、設計、程式碼、系統架構，皆屬 Nexelink 或授權合作夥伴所有。未經書面授權，不得擅自使用、重製、修改或轉載。</p>
+
+    <h2>五、修改權利</h2>
+    <p>Nexelink 保留隨時修改本條款與政策之權利，並將更新後公告於本頁面。建議使用者定期查閱。</p>
+
+    <h2>六、聯絡方式</h2>
+    <p>如有條款疑問或個資使用問題，歡迎來信聯絡：<strong>nexelink.team@gmail.com</strong></p>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="/js/nav.js"></script>
+  <script>
+    fetch('/components/nav.html').then(res => res.text()).then(data => document.getElementById('nav-placeholder').innerHTML = data);
+    fetch('/components/footer.html').then(res => res.text()).then(data => document.getElementById('footer-placeholder').innerHTML = data);
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關於 Nexelink</title>
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <main style="padding-top: 80px; padding-bottom: 100px;">
+    <h1 style="text-align:center;">關於我們</h1>
+    <p style="text-align:center;">Nexelink 是一間以創新科技與數位轉型為核心的設計開發公司，結合品牌策略、程式開發與視覺設計，打造客戶專屬數位方案。</p>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="/js/nav.js"></script>
+  <script>
+    fetch('/components/nav.html').then(res => res.text()).then(data => document.getElementById('nav-placeholder').innerHTML = data);
+    fetch('/components/footer.html').then(res => res.text()).then(data => document.getElementById('footer-placeholder').innerHTML = data);
+  </script>
+</body>
+</html>

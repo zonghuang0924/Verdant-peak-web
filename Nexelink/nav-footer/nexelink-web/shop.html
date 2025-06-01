@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>網站客製選購 | Nexelink</title>
+  <link rel="stylesheet" href="/css/nav.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <style>
+    main {
+      padding: 100px 20px;
+      max-width: 800px;
+      margin: auto;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    h2 {
+      text-align: center;
+      color: #00ffff;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 20px;
+    }
+    select, input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .total {
+      font-size: 1.2rem;
+      color: #00ffff;
+      margin-top: 20px;
+    }
+    button {
+      background: #00ffff;
+      color: #000;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+    button:hover {
+      background: #00dddd;
+    }
+  </style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <h2>客製網站選購</h2>
+
+    <label>頁面數量</label>
+    <select id="pages">
+      <option value="0">請選擇</option>
+      <option value="10000">5 頁內（$10,000）</option>
+      <option value="20000">5～10 頁（$20,000）</option>
+      <option value="30000">10 頁以上（$30,000）</option>
+    </select>
+
+    <label>動畫效果</label>
+    <select id="animation">
+      <option value="0">無動畫</option>
+      <option value="3000">基本浮動動畫（+$3,000）</option>
+      <option value="6000">高階動畫/滾動特效（+$6,000）</option>
+    </select>
+
+    <label>主色系</label>
+    <select id="color">
+      <option value="0">預設（免費）</option>
+      <option value="1000">自選漸層色系（+$1,000）</option>
+    </select>
+
+    <label>後端系統</label>
+    <select id="backend">
+      <option value="0">靜態前端網站</option>
+      <option value="10000">整合表單系統（+$10,000）</option>
+      <option value="20000">整合會員登入、管理介面（+$20,000）</option>
+    </select>
+
+    <label>想要的網域名稱</label>
+    <input type="text" id="domain" placeholder="例如：mybrand.com" />
+
+    <label>聯絡人 Email</label>
+    <input type="email" id="email" placeholder="example@gmail.com" required />
+
+    <div class="total">總預算：<span id="total">NT$ 0</span></div>
+
+    <button onclick="submitOrder()">送出報價需求</button>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="/js/nav.js"></script>
+  <script>
+    // 載入 nav 與 footer
+    fetch('/components/nav.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('nav-placeholder').innerHTML = data);
+    fetch('/components/footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+
+    // 即時計價
+    const selects = document.querySelectorAll('select');
+    selects.forEach(sel => sel.addEventListener('change', updateTotal));
+    function updateTotal() {
+      let total = 0;
+      selects.forEach(s => total += parseInt(s.value));
+      document.getElementById('total').innerText = "NT$ " + total.toLocaleString();
+    }
+
+    // 模擬送出資料（此處改成你的 GMAIL API 或 Google Script 接收）
+    function submitOrder() {
+      const pages = document.getElementById('pages').value;
+      const animation = document.getElementById('animation').value;
+      const color = document.getElementById('color').value;
+      const backend = document.getElementById('backend').value;
+      const domain = document.getElementById('domain').value;
+      const email = document.getElementById('email').value;
+      const total = document.getElementById('total').innerText;
+
+      const body = `
+網站頁面：${pages} 元
+動畫效果：${animation} 元
+主色系：${color} 元
+後端系統：${backend} 元
+網域名稱：${domain}
+聯絡信箱：${email}
+總預算：${total}
+`;
+
+      // 提示用戶（實際部署請改為 fetch 寄送到你設的 mail API）
+      alert("您的需求已送出，我們將會盡快聯繫您！\n\n" + body);
+
+      // ✅ 將來可改為送出至 Gmail：
+      // fetch('https://script.google.com/macros/s/xxx/exec', { method: 'POST', body: ... })
+    }
+  </script>
+</body>
+</html>
