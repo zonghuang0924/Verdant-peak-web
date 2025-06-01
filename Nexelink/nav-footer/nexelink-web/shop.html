@@ -61,6 +61,7 @@
       <option value="10000">5 頁內（$10,000）</option>
       <option value="20000">5～10 頁（$20,000）</option>
       <option value="30000">10 頁以上（$30,000）</option>
+      <option value="10000">客製化討論</option>
     </select>
 
     <label>動畫效果</label>
@@ -68,6 +69,13 @@
       <option value="0">無動畫</option>
       <option value="3000">基本浮動動畫（+$3,000）</option>
       <option value="6000">高階動畫/滾動特效（+$6,000）</option>
+    </select>
+
+    <label>語言支援</label>
+    <select id="animation">
+      <option value="0">預設(繁體中文)</option>
+      <option value="3000">英文（+$5000）</option>
+      <option value="6000">其他語言(請至備註區填寫語言)（+$6,000）</option>
     </select>
 
     <label>主色系</label>
@@ -83,11 +91,27 @@
       <option value="20000">整合會員登入、管理介面（+$20,000）</option>
     </select>
 
-    <label>想要的網域名稱</label>
+    <label>響應式設計</label>
+    <select id="animation">
+      <option value="0">電腦用</option>
+      <option value="3000">手機 平板（+$2,000）</option>
+    </select>
+
+    <label>想要的網域名稱(建議由本平台做購買 以便進行設定)</label>
     <input type="text" id="domain" placeholder="例如：mybrand.com" />
+
+    <label>備註</label>
+    <input type="text" id="domain"/>
+
 
     <label>聯絡人 Email</label>
     <input type="email" id="email" placeholder="example@gmail.com" required />
+
+    <label>姓名 name</label>
+    <input type="name" id="name"/>
+
+    <label>電話 phone</label>
+    <input type="phone" id="phone"/>
 
     <div class="total">總預算：<span id="total">NT$ 0</span></div>
 
@@ -96,7 +120,7 @@
 
   <div id="footer-placeholder"></div>
 
-  <script src="/js/nav.js"></script>
+  <script src="/Nexelink/nav-footer/nav.js"></script>
   <script>
     // 載入 nav 與 footer
     fetch('/components/nav.html')
