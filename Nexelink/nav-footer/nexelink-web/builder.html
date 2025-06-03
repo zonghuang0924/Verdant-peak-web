@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>選配系統｜Nexelink</title>
+  <link rel="stylesheet" href="builder.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <nav id="navbar">
+    <h1 class="logo">Nexelink</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="about.html">關於</a></li>
+      <li><a href="builder.html">選配</a></li>
+      <li><a href="partner.html">合作</a></li>
+      <li><a href="news.html">消息</a></li>
+      <li><a href="contact.html">聯絡</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h2>網站功能選配系統</h2>
+    <p>勾選所需功能模組，系統將即時計算報價，並可下載 PDF 報價單。</p>
+  </section>
+
+  <!-- 功能模組 -->
+  <section class="module-section">
+    <h3>網站頁面</h3>
+    <label><input type="checkbox" data-name="首頁" data-price="3000"> 首頁（$3000）</label>
+    <label><input type="checkbox" data-name="產品頁" data-price="2500"> 產品頁（$2500）</label>
+    <label><input type="checkbox" data-name="關於我們" data-price="1800"> 關於我們（$1800）</label>
+    <label><input type="checkbox" data-name="聯絡頁" data-price="1500"> 聯絡頁（$1500）</label>
+    <label><input type="checkbox" data-name="登入註冊" data-price="2200"> 登入/註冊（$2200）</label>
+    <label><input type="checkbox" data-name="部落格頁" data-price="2800"> 部落格頁（$2800）</label>
+
+    <h3>動畫特效</h3>
+    <label><input type="checkbox" data-name="滑入動畫" data-price="800"> 滑入動畫（$800）</label>
+    <label><input type="checkbox" data-name="圖片輪播" data-price="1000"> 圖片輪播（$1000）</label>
+    <label><input type="checkbox" data-name="滾動視差" data-price="1500"> Parallax（$1500）</label>
+    <label><input type="checkbox" data-name="數字動畫" data-price="900"> 數字遞增動畫（$900）</label>
+
+    <h3>後端系統</h3>
+    <label><input type="checkbox" data-name="會員系統" data-price="3500"> 會員系統（$3500）</label>
+    <label><input type="checkbox" data-name="後台管理" data-price="4500"> 後台管理（$4500）</label>
+    <label><input type="checkbox" data-name="資料庫連接" data-price="3200"> 資料庫連接（$3200）</label>
+    <label><input type="checkbox" data-name="訂單系統" data-price="3800"> 訂單管理系統（$3800）</label>
+
+    <h3>整合串接</h3>
+    <label><input type="checkbox" data-name="Google登入" data-price="1000"> Google登入（$1000）</label>
+    <label><input type="checkbox" data-name="金流串接" data-price="2800"> 金流串接（$2800）</label>
+    <label><input type="checkbox" data-name="Firebase整合" data-price="2000"> Firebase整合（$2000）</label>
+    <label><input type="checkbox" data-name="Line登入" data-price="1200"> Line登入（$1200）</label>
+
+    <h3>支援服務</h3>
+    <label><input type="checkbox" data-name="SEO優化" data-price="1200"> SEO優化（$1200）</label>
+    <label><input type="checkbox" data-name="網站維護一年" data-price="2000"> 維護一年（$2000）</label>
+    <label><input type="checkbox" data-name="SSL憑證申請" data-price="800"> SSL 憑證（$800）</label>
+
+    <h3>擴充功能</h3>
+    <label><input type="checkbox" data-name="聊天室系統" data-price="3000"> 即時聊天室（$3000）</label>
+    <label><input type="checkbox" data-name="表單收集" data-price="1000"> 表單收集系統（$1000）</label>
+    <label><input type="checkbox" data-name="評論系統" data-price="1500"> 評論與星星評價（$1500）</label>
+  </section>
+
+  <!-- 報價明細 -->
+  <section class="quote-section">
+    <h2>報價明細</h2>
+    <ul id="selected-list"></ul>
+    <p>總金額：<span id="total-price">0</span> 元</p>
+    <button onclick="downloadPDF()">📄 下載報價單 PDF</button>
+  </section>
+
+  <!-- 客戶聯絡表單 -->
+  <section class="form-section">
+    <h2>聯絡資訊</h2>
+    <form class="form-box">
+      <input type="text" placeholder="姓名" required />
+      <input type="email" placeholder="Email" required />
+      <textarea placeholder="補充需求或留言..." rows="4"></textarea>
+      <button type="submit">送出需求</button>
+    </form>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer>
+    <p>© 2025 Nexelink 數位開發有限公司 All rights reserved.</p>
+  </footer>
+
+  <script src="builder.js"></script>
+</body>
+</html>

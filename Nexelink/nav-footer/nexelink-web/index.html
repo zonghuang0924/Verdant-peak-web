@@ -1,26 +1,90 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexelink 首頁</title>
-  <link rel="stylesheet" href="/css/nav.css">
-  <link rel="stylesheet" href="/css/footer.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nexelink 官網首頁</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="nav-placeholder"></div>
 
-  <main style="padding-top: 80px; padding-bottom: 100px;">
-    <h1 style="text-align:center;">歡迎來到 Nexelink</h1>
-    <p style="text-align:center;">我們是致力於數位設計、網站開發與科技創新的團隊。</p>
-  </main>
+  <!-- 導覽列 -->
+  <nav id="navbar">
+    <h1 class="logo">Nexelink</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="about.html">關於</a></li>
+      <li><a href="builder.html">選配</a></li>
+      <li><a href="partner.html">合作</a></li>
+      <li><a href="news.html">消息</a></li>
+      <li><a href="contact.html">聯絡</a></li>
+    </ul>
+  </nav>
 
-  <div id="footer-placeholder"></div>
+  <!-- 輪播圖 -->
+  <section class="carousel">
+    <div class="slides">
+      <div class="slide active">🚀 Nexelink 打造你的數位未來</div>
+      <div class="slide">🌐 專業網站設計與開發服務</div>
+      <div class="slide">🎮 開發復古與現代結合的遊戲平台</div>
+    </div>
+  </section>
 
-  <script src="/Nexelink/nav-footer/nav.js"></script>
+  <!-- 三欄介紹 -->
+  <section class="features">
+    <div class="feature-card">
+      <h3>網站開發</h3>
+      <p>企業官網、電商平台、會員系統、預約功能一次搞定。</p>
+    </div>
+    <div class="feature-card">
+      <h3>多媒體設計</h3>
+      <p>視覺設計、影片剪輯、品牌規劃，專業打造形象。</p>
+    </div>
+    <div class="feature-card">
+      <h3>遊戲平台</h3>
+      <p>2D 復古現代融合風格，打造玩家與創作者的新世界。</p>
+    </div>
+  </section>
+
+  <!-- CTA 行動區 -->
+  <section class="cta">
+    <h2>想打造你的專屬網站？</h2>
+    <p>使用我們的選配系統，自由組合模組並獲得報價！</p>
+    <a href="builder.html" class="btn">立即開始</a>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer>
+    <p>© 2025 Nexelink 數位開發有限公司 All rights reserved.</p>
+  </footer>
+
+  <!-- JS：滑動隱藏導覽列、輪播圖、選單切換 -->
   <script>
-    fetch('/components/nav.html').then(res => res.text()).then(data => document.getElementById('nav-placeholder').innerHTML = data);
-    fetch('/components/footer.html').then(res => res.text()).then(data => document.getElementById('footer-placeholder').innerHTML = data);
+    // 滑動導覽列
+    let lastScroll = 0;
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.scrollY;
+      navbar.style.top = currentScroll > lastScroll ? "-70px" : "0";
+      lastScroll = currentScroll;
+    });
+
+    // 手機選單
+    function toggleMenu() {
+      document.getElementById("nav-links").classList.toggle("active");
+    }
+
+    // 輪播圖
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
+    setInterval(() => {
+      slides[currentSlide].classList.remove("active");
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add("active");
+    }, 3500);
   </script>
 </body>
 </html>

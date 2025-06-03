@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>聯絡我們｜Nexelink</title>
+  <link rel="stylesheet" href="builder.css" />
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <nav id="navbar">
+    <h1 class="logo">Nexelink</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="about.html">關於</a></li>
+      <li><a href="builder.html">選配</a></li>
+      <li><a href="partner.html">合作</a></li>
+      <li><a href="news.html">消息</a></li>
+      <li><a href="contact.html">聯絡</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h2>聯絡我們</h2>
+    <p>有任何合作、專案或網站需求，歡迎隨時聯絡 Nexelink。</p>
+  </section>
+
+  <section class="form-section">
+    <h3>📨 線上留言表單</h3>
+    <form class="form-box">
+      <input type="text" placeholder="姓名" required />
+      <input type="email" placeholder="Email" required />
+      <input type="text" placeholder="公司名稱（可選）" />
+      <textarea placeholder="請簡述您的需求，我們將於24小時內回覆。" rows="5" required></textarea>
+      <button type="submit">送出訊息</button>
+    </form>
+  </section>
+
+  <section class="module-section">
+    <h3>📞 其他聯絡方式</h3>
+    <ul>
+      <li>✉️ Email：contact@nexelink.dev</li>
+      <li>📱 Line 官方帳號：@nexelink</li>
+      <li>🌐 網站：www.nexelink.dev</li>
+      <li>🕘 時間：週一～週五 09:00-18:00</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Nexelink 數位開發有限公司 All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-links").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

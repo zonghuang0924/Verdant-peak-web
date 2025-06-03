@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>最新消息｜Nexelink</title>
+  <link rel="stylesheet" href="builder.css" />
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <nav id="navbar">
+    <h1 class="logo">Nexelink</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="about.html">關於</a></li>
+      <li><a href="builder.html">選配</a></li>
+      <li><a href="partner.html">合作</a></li>
+      <li><a href="news.html">消息</a></li>
+      <li><a href="contact.html">聯絡</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h2>最新消息</h2>
+    <p>追蹤 Nexelink 的平台更新、活動與開發紀錄</p>
+  </section>
+
+  <section class="module-section">
+    <h3>📢 近期公告</h3>
+    <ul>
+      <li><strong>2025/06/01：</strong>推出新版網站功能選配系統，提供 PDF 報價單產出。</li>
+      <li><strong>2025/05/20：</strong>正式與翠峰飲品開發公司建立數位轉型合作關係。</li>
+      <li><strong>2025/05/10：</strong>開發專屬 Nexelink 遊戲平台 Prototype 完成內測。</li>
+    </ul>
+
+    <h3>🧠 開發進度與預告</h3>
+    <ul>
+      <li>🔄 即將上線：Nexelink 客戶儀表板（估 7 月）</li>
+      <li>🕹️ 遊戲平台將支援 2D 對戰、排行榜與社群功能</li>
+      <li>📈 社群整合工具包預計 Q3 開放 API 接入</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Nexelink 數位開發有限公司 All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-links").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

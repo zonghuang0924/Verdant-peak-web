@@ -1,0 +1,172 @@
+/* builder.css */
+
+body {
+  font-family: "Segoe UI", sans-serif
+
+/* builder.css */
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
+  color: #333;
+  padding-bottom: 60px;
+}
+
+nav {
+  background: #009688;
+  color: white;
+  padding: 15px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: top 0.3s;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+#nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+.hero {
+  text-align: center;
+  padding: 120px 20px 40px;
+  background: #b2dfdb;
+}
+
+.module-section {
+  padding: 30px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.module-section h3 {
+  margin-top: 30px;
+  font-size: 1.2em;
+  color: #00796b;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.module-section label {
+  display: block;
+  margin: 8px 0;
+  padding-left: 10px;
+}
+
+.quote-section {
+  background: #f1f8e9;
+  padding: 30px 20px;
+  max-width: 800px;
+  margin: auto;
+  border-top: 2px solid #8bc34a;
+}
+
+#selected-list {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.quote-section button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #00796b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-section {
+  padding: 30px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.form-box input, .form-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-box button {
+  padding: 10px 20px;
+  background: #009688;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+footer {
+  background: #004d40;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* 響應式手機版 */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  #nav-links {
+    flex-direction: column;
+    background: #00695c;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 180px;
+    display: none;
+  }
+
+  #nav-links.active {
+    display: flex;
+  }
+
+  #nav-links li {
+    padding: 10px;
+    text-align: right;
+  }
+}
